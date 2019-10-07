@@ -8,7 +8,7 @@ namespace MvvmFrame.Wpf.TestAdapter.UnitTests.GivenWhenThenQueue
     [TestClass]
     public class GivenWhenThenSyncTest : GivenWhenThenTestBase
     {
-        [Timeout(Timeouts.TwoSecond)]
+        [Timeout(Timeouts.FiveSecond)]
         [TestMethod]
         public void GivenWhenThenTestCase()
         {
@@ -20,7 +20,7 @@ namespace MvvmFrame.Wpf.TestAdapter.UnitTests.GivenWhenThenQueue
             CheckQueue(3);
         }
 
-        [Timeout(Timeouts.TwoSecond)]
+        [Timeout(Timeouts.FiveSecond)]
         [TestMethod]
         public void GivenWhenThen_1G_TestCase()
         {
@@ -46,7 +46,7 @@ namespace MvvmFrame.Wpf.TestAdapter.UnitTests.GivenWhenThenQueue
             CheckQueue(4);
         }
 
-        [Timeout(Timeouts.TwoSecond)]
+        [Timeout(Timeouts.FiveSecond)]
         [TestMethod]
         public void GivenWhenThen_3G_TestCase()
         {
@@ -61,7 +61,7 @@ namespace MvvmFrame.Wpf.TestAdapter.UnitTests.GivenWhenThenQueue
             CheckQueue(4);
         }
 
-        [Timeout(Timeouts.TwoSecond)]
+        [Timeout(Timeouts.FiveSecond)]
         [TestMethod]
         public void GivenWhenThen_4G_TestCase()
         {
