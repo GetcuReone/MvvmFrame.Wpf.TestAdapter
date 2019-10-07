@@ -53,23 +53,27 @@ namespace MvvmFrame.Wpf.TestAdapter.UnitTests.GivenWhenThenQueue
             {
                 ResultBlockCode current = _resultBlockCodes[i];
 
-                if (previous.Code == _givenCode)
+                if (current.Code != previous.Code)
                 {
-                    if (current.Code != _givenCode && current.Code != _whenCode)
-                        Assert.Fail($"After the block is {current.Code}, the block is {previous.Code} was called");
-                }
-                else if (previous.Code == _whenCode)
-                {
-                    if (current.Code != _whenCode && current.Code != _thenCode)
-                        Assert.Fail($"After the block is {current.Code}, the block is {previous.Code} was called");
-                }
-                else if (previous.Code == _thenCode)
-                {
-                    if (current.Code != _thenCode)
-                        Assert.Fail($"After the block is {current.Code}, the block is {previous.Code} was called");
+                    if (previous.Code == _givenCode)
+                    {
+                        if (current.Code != _whenCode)
+                            Assert.Fail($"After the block is '{current.Code}', the block is '{previous.Code}' was called");
+                    }
+                    else if (previous.Code == _whenCode)
+                    {
+                        if (current.Code != _thenCode)
+                            Assert.Fail($"After the block is {current.Code}, the block is {previous.Code} was called");
+                    }
+                    else if (previous.Code == _thenCode)
+                    {
+                            Assert.Fail($"After the block is {current.Code}, the block is {previous.Code} was called");
+                    }
                 }
 
-                Assert.IsTrue(current.Time > previous.Time, $"After the block {current.Code} was called before the block {previous.Code}");
+                Assert.IsTrue(current.Time >= previous.Time, $"After the block {current.Code} was called before the block {previous.Code}\n" +
+                    $"current '{current.Code}' - {current.Time}\n" +
+                    $"prevous '{previous.Code}' = {previous.Time}");
             }
         }
     }
