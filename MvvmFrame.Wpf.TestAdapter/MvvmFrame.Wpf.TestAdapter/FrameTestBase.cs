@@ -3,6 +3,7 @@ using MvvmFrame.Wpf.TestAdapter.Entities;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Windows.Threading;
 
 namespace MvvmFrame.Wpf.TestAdapter
 {
@@ -109,6 +110,15 @@ namespace MvvmFrame.Wpf.TestAdapter
                     return null;
                 },
             };
+        }
+
+        /// <summary>
+        /// Clean up
+        /// </summary>
+        [TestCleanup]
+        public void CleanUp()
+        {
+            Dispatcher.CurrentDispatcher.InvokeShutdown();
         }
     }
 }
