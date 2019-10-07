@@ -42,6 +42,14 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\AsyncBlockBase.cs" />
+    <Compile Include="Entities\BlockBase.cs" />
+    <Compile Include="Entities\Given.cs" />
+    <Compile Include="Entities\GivenAsync.cs" />
+    <Compile Include="Entities\Then.cs" />
+    <Compile Include="Entities\ThenAsync.cs" />
+    <Compile Include="Entities\When.cs" />
+    <Compile Include="Entities\WhenAsync.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
