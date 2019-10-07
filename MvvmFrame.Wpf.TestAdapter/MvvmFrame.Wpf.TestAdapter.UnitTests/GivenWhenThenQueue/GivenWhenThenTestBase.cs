@@ -13,17 +13,32 @@ namespace MvvmFrame.Wpf.TestAdapter.UnitTests.GivenWhenThenQueue
         protected readonly string _thenCode = "given";
         protected readonly List<ResultBlockCode> _resultBlockCodes = new List<ResultBlockCode>();
 
-        protected void WriteCodeAndTime(string code)
+        private object _givanWhenThanParam;
+
+        public GivenWhenThenTestBase WriteCodeAndTime(string code)
         {
             _resultBlockCodes.Add(new ResultBlockCode { Code = code, Time = DateTime.Now });
+            return this;
         }
 
-        protected async ValueTask WriteCodeAndTimeAsync(string code)
+        public TParam SaveParam<TParam>(TParam param)
         {
-            await Task.Run(() => WriteCodeAndTime(code));
+            _givanWhenThanParam = param;
+            return param;
         }
 
-        protected void CheckQueue(int countItems)
+        public GivenWhenThenTestBase HasParam<TParam>(TParam param)
+        {
+            Assert.AreEqual(param, _givanWhenThanParam);
+            return this;
+        }
+
+        public void Void()
+        {
+
+        }
+
+        public void CheckQueue(int countItems)
         {
             Assert.AreEqual(countItems, _resultBlockCodes.Count, "Blocks have not triggered the expected number of times");
 
