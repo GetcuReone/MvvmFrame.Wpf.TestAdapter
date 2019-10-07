@@ -20,7 +20,6 @@ namespace MvvmFrame.Wpf.TestAdapter.Helpers
                 BlockBase currentBlock = blocksStack.Pop();
 
                 string startMessage = $"[{DateTime.Now}][{currentBlock.NameBlock}] start '{currentBlock.Discription}'";
-                Console.WriteLine(startMessage);
                 Debug.WriteLine(startMessage);
 
                 param = currentBlock.IsAsync
@@ -28,7 +27,6 @@ namespace MvvmFrame.Wpf.TestAdapter.Helpers
                     : currentBlock.Execute(param);
 
                 string endMessage = $"[{DateTime.Now}][{currentBlock.NameBlock}] end '{currentBlock.Discription}'\n";
-                Console.WriteLine(endMessage);
                 Debug.WriteLine(endMessage);
             }
 

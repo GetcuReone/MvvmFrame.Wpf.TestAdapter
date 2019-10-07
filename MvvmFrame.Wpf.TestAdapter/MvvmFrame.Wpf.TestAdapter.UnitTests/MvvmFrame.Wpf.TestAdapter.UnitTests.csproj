@@ -44,6 +44,9 @@
     <Reference Include="System.Xaml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GivenWhenThenQueue\Entities\ResultBlockCode.cs" />
+    <Compile Include="GivenWhenThenQueue\GivenWhenThenTestBase.cs" />
+    <Compile Include="GivenWhenThenQueue\GivenWhenThenSyncTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RunTests\RunTests.cs" />
     <Compile Include="RunTests\PageTest.xaml.cs">
