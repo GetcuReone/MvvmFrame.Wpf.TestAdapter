@@ -10,7 +10,10 @@ namespace MvvmFrame.Wpf.TestAdapter.Entities
     /// <typeparam name="TOutput"></typeparam>
     public abstract class AsyncBlockBase<TInput, TOutput> : BlockBase
     {
-        internal Func<TInput, ValueTask<TOutput>> CodeBlock { get; set; }
+        /// <summary>
+        /// Code block
+        /// </summary>
+        public Func<TInput, ValueTask<TOutput>> CodeBlock { get; set; }
 
         /// <summary>
         /// 

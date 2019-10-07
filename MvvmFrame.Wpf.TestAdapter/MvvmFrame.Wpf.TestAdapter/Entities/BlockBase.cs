@@ -8,7 +8,10 @@ namespace MvvmFrame.Wpf.TestAdapter.Entities
     /// </summary>
     public abstract class BlockBase
     {
-        internal abstract string NameBlock { get; }
+        /// <summary>
+        /// Block name
+        /// </summary>
+        public abstract string NameBlock { get; }
         internal BlockBase PreviousBlock { get; set; }
 
         /// <summary>
@@ -36,7 +39,10 @@ namespace MvvmFrame.Wpf.TestAdapter.Entities
     /// </summary>
     public abstract class BlockBase<TInput, TOutput>: BlockBase
     {
-        internal Func<TInput, TOutput> CodeBlock { get; set; }
+        /// <summary>
+        /// Code block
+        /// </summary>
+        public Func<TInput, TOutput> CodeBlock { get; set; }
 
         internal override ValueTask<object> ExecuteAsync(object param) => throw new NotImplementedException();
 
