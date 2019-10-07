@@ -115,6 +115,9 @@ namespace MvvmFrame.Wpf.TestAdapter
         /// <summary>
         /// Clean up
         /// </summary>
+        /// <remarks>
+        /// Thank you very much https://www.meziantou.net/unit-tests-with-a-wpf-window.htm
+        /// </remarks>
         [TestCleanup]
         public void CleanUp()
         {
