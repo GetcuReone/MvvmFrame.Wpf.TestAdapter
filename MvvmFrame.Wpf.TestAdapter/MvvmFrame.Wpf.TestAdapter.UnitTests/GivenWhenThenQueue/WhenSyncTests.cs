@@ -3,13 +3,13 @@
 namespace MvvmFrame.Wpf.TestAdapter.UnitTests.GivenWhenThenQueue
 {
     [TestClass]
-    public class GivenSyncTests : GivenWhenThenTestBase
+    public class WhenSyncTests : GivenWhenThenTestBase
     {
         [Timeout(Timeouts.FiveSecond)]
         [TestMethod]
-        public void GivenWhenThenTestCase()
+        public void WhenSyncFromSync_1_TestCase()
         {
-            Given(_givenCode, frame => WriteCodeAndTime(_givenCode).Void())
+            Given(_givenCode, f => WriteCodeAndTime(_givenCode).Void())
                 .When(_whenCode, () => WriteCodeAndTime(_whenCode).Void())
                 .Then(_thenCode, () => WriteCodeAndTime(_thenCode).Void())
                 .Run<TestWindow>(window => window.mainFrame);
@@ -19,114 +19,94 @@ namespace MvvmFrame.Wpf.TestAdapter.UnitTests.GivenWhenThenQueue
 
         [Timeout(Timeouts.FiveSecond)]
         [TestMethod]
-        public void GivenSyncFromSync_1_TestCase()
-        {
-            Given(_givenCode, f => WriteCodeAndTime(_givenCode).Void())
-                .And(_givenCode, () => WriteCodeAndTime(_givenCode).Void())
-                .When(_whenCode, () => WriteCodeAndTime(_whenCode).Void())
-                .Then(_thenCode, () => WriteCodeAndTime(_thenCode).Void())
-                .Run<TestWindow>(window => window.mainFrame);
-
-            CheckQueue(4);
-        }
-
-        [Timeout(Timeouts.FiveSecond)]
-        [TestMethod]
-        public void GivenSyncFromSync_2_TestCase()
+        public void WhenSyncFromSync_2_TestCase()
         {
             Given(_givenCode, frame => WriteCodeAndTime(_givenCode).SaveParam(frame))
-                .And(_givenCode, frame => WriteCodeAndTime(_givenCode).HasParam(frame).Void())
-                .When(_whenCode, () => WriteCodeAndTime(_whenCode).Void())
+                .When(_whenCode, frame => WriteCodeAndTime(_whenCode).HasParam(frame).Void())
                 .Then(_thenCode, () => WriteCodeAndTime(_thenCode).Void())
                 .Run<TestWindow>(window => window.mainFrame);
 
-            CheckQueue(4);
+            CheckQueue(3);
         }
 
         [Timeout(Timeouts.FiveSecond)]
         [TestMethod]
-        public void GivenSyncFromSync_3_TestCase()
+        public void WhenSyncFromSync_3_TestCase()
         {
             var obj = new object();
 
             Given(_givenCode, frame => WriteCodeAndTime(_givenCode).Void())
-                .And(_givenCode, () => WriteCodeAndTime(_givenCode).SaveParam(obj))
-                .When(_whenCode, () => WriteCodeAndTime(_whenCode).HasParam(obj).Void())
-                .Then(_thenCode, () => WriteCodeAndTime(_thenCode).Void())
+                .When(_whenCode, () => WriteCodeAndTime(_whenCode).SaveParam(obj))
+                .Then(_thenCode, () => WriteCodeAndTime(_thenCode).HasParam(obj).Void())
                 .Run<TestWindow>(window => window.mainFrame);
 
-            CheckQueue(4);
+            CheckQueue(3);
         }
 
         [Timeout(Timeouts.FiveSecond)]
         [TestMethod]
-        public void GivenSyncFromSync_4_TestCase()
+        public void WhenSyncFromSync_4_TestCase()
         {
             var obj = new object();
 
             Given(_givenCode, frame => WriteCodeAndTime(_givenCode).SaveParam(frame))
-                .And(_givenCode, frame => WriteCodeAndTime(_givenCode).HasParam(frame).SaveParam(obj))
-                .When(_whenCode, () => WriteCodeAndTime(_whenCode).HasParam(obj).Void())
+                .When(_whenCode, frame => WriteCodeAndTime(_whenCode).HasParam(frame).SaveParam(obj))
                 .Then(_thenCode, () => WriteCodeAndTime(_thenCode).Void())
                 .Run<TestWindow>(window => window.mainFrame);
 
-            CheckQueue(4);
+            CheckQueue(3);
         }
 
         [Timeout(Timeouts.FiveSecond)]
         [TestMethod]
-        public void GivenSyncFromAsync_1_TestCase()
+        public void WhenSyncFromAsync_1_TestCase()
         {
             GivenAsync(_givenCode, async frame => (await WriteCodeAndTimeAsync(_givenCode)).Void())
-                .And(_givenCode, () => WriteCodeAndTime(_givenCode).Void())
                 .When(_whenCode, () => WriteCodeAndTime(_whenCode).Void())
                 .Then(_thenCode, () => WriteCodeAndTime(_thenCode).Void())
                 .Run<TestWindow>(window => window.mainFrame);
 
-            CheckQueue(4);
+            CheckQueue(3);
         }
 
         [Timeout(Timeouts.FiveSecond)]
         [TestMethod]
-        public void GivenSyncFromAsync_2_TestCase()
+        public void WhenSyncFromAsync_2_TestCase()
         {
             GivenAsync(_givenCode, async frame => (await WriteCodeAndTimeAsync(_givenCode)).SaveParam(frame))
-                .And(_givenCode, frame => WriteCodeAndTime(_givenCode).HasParam(frame).Void())
-                .When(_whenCode, () => WriteCodeAndTime(_whenCode).Void())
+                .When(_whenCode, frame => WriteCodeAndTime(_whenCode).HasParam(frame).Void())
                 .Then(_thenCode, () => WriteCodeAndTime(_thenCode).Void())
                 .Run<TestWindow>(window => window.mainFrame);
 
-            CheckQueue(4);
+            CheckQueue(3);
         }
 
         [Timeout(Timeouts.FiveSecond)]
         [TestMethod]
-        public void GivenSyncFromAsync_3_TestCase()
+        public void WhenSyncFromAsync_3_TestCase()
         {
             var obj = new object();
 
             GivenAsync(_givenCode, async frame => (await WriteCodeAndTimeAsync(_givenCode)).Void())
-                .And(_givenCode, () => WriteCodeAndTime(_givenCode).SaveParam(obj))
-                .When(_whenCode, () => WriteCodeAndTime(_whenCode).HasParam(obj).Void())
-                .Then(_thenCode, () => WriteCodeAndTime(_thenCode).Void())
+                .When(_whenCode, () => WriteCodeAndTime(_whenCode).SaveParam(obj))
+                .Then(_thenCode, () => WriteCodeAndTime(_thenCode).HasParam(obj).Void())
                 .Run<TestWindow>(window => window.mainFrame);
 
-            CheckQueue(4);
+            CheckQueue(3);
         }
 
         [Timeout(Timeouts.FiveSecond)]
         [TestMethod]
-        public void GivenSyncFromAsync_4_TestCase()
+        public void WhenSyncFromAsync_4_TestCase()
         {
             var obj = new object();
 
             GivenAsync(_givenCode, async frame => (await WriteCodeAndTimeAsync(_givenCode)).SaveParam(frame))
-                .And(_givenCode, frame => WriteCodeAndTime(_givenCode).HasParam(frame).SaveParam(obj))
-                .When(_whenCode, () => WriteCodeAndTime(_whenCode).HasParam(obj).Void())
-                .Then(_thenCode, () => WriteCodeAndTime(_thenCode).Void())
+                .When(_whenCode, frame => WriteCodeAndTime(_whenCode).HasParam(frame).SaveParam(obj))
+                .Then(_thenCode, () => WriteCodeAndTime(_thenCode).HasParam(obj).Void())
                 .Run<TestWindow>(window => window.mainFrame);
 
-            CheckQueue(4);
+            CheckQueue(3);
         }
     }
 }
