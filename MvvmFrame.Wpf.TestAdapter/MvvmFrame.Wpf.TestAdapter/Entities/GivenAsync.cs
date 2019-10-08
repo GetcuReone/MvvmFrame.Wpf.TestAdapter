@@ -142,7 +142,7 @@ namespace MvvmFrame.Wpf.TestAdapter.Entities
         /// <param name="discription"></param>
         /// <param name="givenBlock"></param>
         /// <returns></returns>
-        public virtual GivenAsync<object, TOutput2> AndAsycn<TOutput2>(string discription, Func<ValueTask<TOutput2>> givenBlock)
+        public virtual GivenAsync<object, TOutput2> AndAsync<TOutput2>(string discription, Func<ValueTask<TOutput2>> givenBlock)
         {
             return new GivenAsync<object, TOutput2>
             {
