@@ -72,5 +72,61 @@ namespace MvvmFrame.Wpf.TestAdapter.UnitTests.GivenWhenThenQueue
 
             CheckQueue(4);
         }
+
+        [Timeout(Timeouts.FiveSecond)]
+        [TestMethod]
+        public void GivenAsyncFromAsync_1_TestCase()
+        {
+            GivenAsync(_givenCode, async frame => (await WriteCodeAndTimeAsync(_givenCode)).Void())
+                .AndAsync(_givenCode, async () => (await WriteCodeAndTimeAsync(_givenCode)).Void())
+                .When(_whenCode, () => WriteCodeAndTime(_whenCode).Void())
+                .Then(_thenCode, () => WriteCodeAndTime(_thenCode).Void())
+                .Run<TestWindow>(window => window.mainFrame);
+
+            CheckQueue(4);
+        }
+
+        [Timeout(Timeouts.FiveSecond)]
+        [TestMethod]
+        public void GivenAsyncFromAsync_2_TestCase()
+        {
+            GivenAsync(_givenCode, async frame => (await WriteCodeAndTimeAsync(_givenCode)).SaveParam(frame))
+                .And(_givenCode, async frame => (await WriteCodeAndTimeAsync(_givenCode)).HasParam(frame).Void())
+                .When(_whenCode, () => WriteCodeAndTime(_whenCode).Void())
+                .Then(_thenCode, () => WriteCodeAndTime(_thenCode).Void())
+                .Run<TestWindow>(window => window.mainFrame);
+
+            CheckQueue(4);
+        }
+
+        [Timeout(Timeouts.FiveSecond)]
+        [TestMethod]
+        public void GivenAsyncFromAsync_3_TestCase()
+        {
+            var obj = new object();
+
+            GivenAsync(_givenCode, async frame => (await WriteCodeAndTimeAsync(_givenCode)).Void())
+                .AndAsync(_givenCode, async () => (await WriteCodeAndTimeAsync(_givenCode)).SaveParam(obj))
+                .When(_whenCode, () => WriteCodeAndTime(_whenCode).HasParam(obj).Void())
+                .Then(_thenCode, () => WriteCodeAndTime(_thenCode).Void())
+                .Run<TestWindow>(window => window.mainFrame);
+
+            CheckQueue(4);
+        }
+
+        [Timeout(Timeouts.FiveSecond)]
+        [TestMethod]
+        public void GivenAsyncFromAsync_4_TestCase()
+        {
+            var obj = new object();
+
+            GivenAsync(_givenCode, async frame => (await WriteCodeAndTimeAsync(_givenCode)).SaveParam(frame))
+                .AndAsync(_givenCode, async frame => (await WriteCodeAndTimeAsync(_givenCode)).HasParam(frame).SaveParam(obj))
+                .When(_whenCode, () => WriteCodeAndTime(_whenCode).HasParam(obj).Void())
+                .Then(_thenCode, () => WriteCodeAndTime(_thenCode).Void())
+                .Run<TestWindow>(window => window.mainFrame);
+
+            CheckQueue(4);
+        }
     }
 }
