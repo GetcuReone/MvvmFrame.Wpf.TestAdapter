@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GivenWhenThenQueue\Entities\ResultBlockCode.cs" />
+    <Compile Include="GivenWhenThenQueue\ThenAsyncTests.cs" />
     <Compile Include="GivenWhenThenQueue\WhenAsyncTests.cs" />
     <Compile Include="GivenWhenThenQueue\ThenSyncTests.cs" />
     <Compile Include="GivenWhenThenQueue\WhenSyncTests.cs" />
