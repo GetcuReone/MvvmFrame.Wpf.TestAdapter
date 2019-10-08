@@ -39,7 +39,7 @@ namespace MvvmFrame.Wpf.TestAdapter.UnitTests.GivenWhenThenQueue
 
             Given(_givenCode, frame => WriteCodeAndTime(_givenCode).Void())
                 .When(_whenCode, () => WriteCodeAndTime(_whenCode).Void())
-                .Then(_thenCode, () => WriteCodeAndTime(_whenCode).Void())
+                .Then(_thenCode, () => WriteCodeAndTime(_thenCode).Void())
                 .And(_thenCode, () => WriteCodeAndTime(_thenCode).SaveParam(obj))
                 .And(_thenCode, param => WriteCodeAndTime(_thenCode).HasParam(param).Void())
                 .Run<TestWindow>(window => window.mainFrame);
@@ -97,7 +97,7 @@ namespace MvvmFrame.Wpf.TestAdapter.UnitTests.GivenWhenThenQueue
 
             GivenAsync(_givenCode, async frame => (await WriteCodeAndTimeAsync(_givenCode)).Void())
                 .WhenAsync(_whenCode, async frame => (await WriteCodeAndTimeAsync(_whenCode)).Void())
-                .ThenAsync(_thenCode, async frame => (await WriteCodeAndTimeAsync(_whenCode)).Void())
+                .ThenAsync(_thenCode, async frame => (await WriteCodeAndTimeAsync(_thenCode)).Void())
                 .And(_thenCode, () => WriteCodeAndTime(_thenCode).SaveParam(obj))
                 .And(_thenCode, param => WriteCodeAndTime(_thenCode).HasParam(param).Void())
                 .Run<TestWindow>(window => window.mainFrame);
@@ -113,7 +113,7 @@ namespace MvvmFrame.Wpf.TestAdapter.UnitTests.GivenWhenThenQueue
 
             GivenAsync(_givenCode, async frame => (await WriteCodeAndTimeAsync(_givenCode)).SaveParam(frame))
                 .WhenAsync(_whenCode, async frame => (await WriteCodeAndTimeAsync(_whenCode)).SaveParam(frame))
-                .ThenAsync(_thenCode, async frame => (await WriteCodeAndTimeAsync(_whenCode)).SaveParam(frame))
+                .ThenAsync(_thenCode, async frame => (await WriteCodeAndTimeAsync(_thenCode)).SaveParam(frame))
                 .And(_thenCode, frame => WriteCodeAndTime(_thenCode).HasParam(frame).SaveParam(obj))
                 .And(_thenCode, param => WriteCodeAndTime(_thenCode).HasParam(param).Void())
                 .Run<TestWindow>(window => window.mainFrame);
