@@ -35,7 +35,7 @@ namespace MvvmFrame.Wpf.TestAdapter.UnitTests.GivenWhenThenQueue
         public void GivenAsyncFromSync_2_TestCase()
         {
             Given(_givenCode, frame => WriteCodeAndTime(_givenCode).SaveParam(frame))
-                .And(_givenCode, async frame => (await WriteCodeAndTimeAsync(_givenCode)).HasParam(frame).Void())
+                .AndAsync(_givenCode, async frame => (await WriteCodeAndTimeAsync(_givenCode)).HasParam(frame).Void())
                 .When(_whenCode, () => WriteCodeAndTime(_whenCode).Void())
                 .Then(_thenCode, () => WriteCodeAndTime(_thenCode).Void())
                 .Run<TestWindow>(window => window.mainFrame);
