@@ -15,7 +15,7 @@ namespace MvvmFrame.Wpf.TestAdapter.Entities
         /// <summary>
         /// Block name
         /// </summary>
-        public override string NameBlock => "Given";
+        public override string NameBlock => "GivenAsync";
 
         #region And Given
 

@@ -17,7 +17,7 @@ namespace MvvmFrame.Wpf.TestAdapter.Entities
         /// <summary>
         /// Block name
         /// </summary>
-        public override string NameBlock => "Then";
+        public override string NameBlock => "ThenAsync";
         internal ThenAsync() { }
 
         #region And Then

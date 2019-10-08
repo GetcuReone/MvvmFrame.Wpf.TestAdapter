@@ -2,6 +2,7 @@
 using MvvmFrame.Wpf.TestAdapter.UnitTests.GivenWhenThenQueue.Entities;
 using System;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace MvvmFrame.Wpf.TestAdapter.UnitTests.GivenWhenThenQueue
@@ -17,9 +18,13 @@ namespace MvvmFrame.Wpf.TestAdapter.UnitTests.GivenWhenThenQueue
 
         public GivenWhenThenTestBase WriteCodeAndTime(string code)
         {
+            // Activity simulation
+            Thread.Sleep(Timeouts.HundredMillisecodnds);
             _resultBlockCodes.Add(new ResultBlockCode { Code = code, Time = DateTime.Now });
             return this;
         }
+
+        public Task<GivenWhenThenTestBase> WriteCodeAndTimeAsync(string code) => Task.Run(() => WriteCodeAndTime(code));
 
         public TParam SaveParam<TParam>(TParam param)
         {
@@ -71,7 +76,7 @@ namespace MvvmFrame.Wpf.TestAdapter.UnitTests.GivenWhenThenQueue
                     }
                 }
 
-                Assert.IsTrue(current.Time >= previous.Time, $"After the block {current.Code} was called before the block {previous.Code}\n" +
+                Assert.IsTrue(current.Time > previous.Time, $"After the block {current.Code} was called before the block {previous.Code}\n" +
                     $"current '{current.Code}' - {current.Time}\n" +
                     $"prevous '{previous.Code}' = {previous.Time}");
             }

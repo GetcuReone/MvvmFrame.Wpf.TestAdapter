@@ -13,7 +13,7 @@ namespace MvvmFrame.Wpf.TestAdapter.Entities
         /// <summary>
         /// Block name
         /// </summary>
-        public override string NameBlock => "When";
+        public override string NameBlock => "WhenAsync";
         internal WhenAsync() { }
 
         #region Then

@@ -25,7 +25,7 @@ namespace MvvmFrame.Wpf.TestAdapter.Entities
             if (param is TInput input)
                 return await CodeBlock(input);
             else if (typeof(TInput).IsAssignableFrom(typeof(object)) && CodeBlock is Func<object, ValueTask<TOutput>> newCodeBlock)
-                return newCodeBlock(param);
+                return await newCodeBlock(param);
 
             throw new ArgumentException($"Code block '{Discription}' expected input {nameof(param)} different type");
         }
