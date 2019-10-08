@@ -51,7 +51,7 @@ namespace MvvmFrame.Wpf.TestAdapter.UnitTests.GivenWhenThenQueue
 
             Given(_givenCode, frame => WriteCodeAndTime(_givenCode).Void())
                 .And(_givenCode, () => WriteCodeAndTime(_givenCode).SaveParam(obj))
-                .When(_whenCode, () => WriteCodeAndTime(_whenCode).HasParam(obj).Void())
+                .When(_whenCode, param => WriteCodeAndTime(_whenCode).HasParam(param).Void())
                 .Then(_thenCode, () => WriteCodeAndTime(_thenCode).Void())
                 .Run<TestWindow>(window => window.mainFrame);
 
@@ -66,7 +66,7 @@ namespace MvvmFrame.Wpf.TestAdapter.UnitTests.GivenWhenThenQueue
 
             Given(_givenCode, frame => WriteCodeAndTime(_givenCode).SaveParam(frame))
                 .And(_givenCode, frame => WriteCodeAndTime(_givenCode).HasParam(frame).SaveParam(obj))
-                .When(_whenCode, () => WriteCodeAndTime(_whenCode).HasParam(obj).Void())
+                .When(_whenCode, param => WriteCodeAndTime(_whenCode).HasParam(param).Void())
                 .Then(_thenCode, () => WriteCodeAndTime(_thenCode).Void())
                 .Run<TestWindow>(window => window.mainFrame);
 
@@ -107,7 +107,7 @@ namespace MvvmFrame.Wpf.TestAdapter.UnitTests.GivenWhenThenQueue
 
             GivenAsync(_givenCode, async frame => (await WriteCodeAndTimeAsync(_givenCode)).Void())
                 .And(_givenCode, () => WriteCodeAndTime(_givenCode).SaveParam(obj))
-                .When(_whenCode, () => WriteCodeAndTime(_whenCode).HasParam(obj).Void())
+                .When(_whenCode, param => WriteCodeAndTime(_whenCode).HasParam(param).Void())
                 .Then(_thenCode, () => WriteCodeAndTime(_thenCode).Void())
                 .Run<TestWindow>(window => window.mainFrame);
 
@@ -122,7 +122,7 @@ namespace MvvmFrame.Wpf.TestAdapter.UnitTests.GivenWhenThenQueue
 
             GivenAsync(_givenCode, async frame => (await WriteCodeAndTimeAsync(_givenCode)).SaveParam(frame))
                 .And(_givenCode, frame => WriteCodeAndTime(_givenCode).HasParam(frame).SaveParam(obj))
-                .When(_whenCode, () => WriteCodeAndTime(_whenCode).HasParam(obj).Void())
+                .When(_whenCode, param => WriteCodeAndTime(_whenCode).HasParam(param).Void())
                 .Then(_thenCode, () => WriteCodeAndTime(_thenCode).Void())
                 .Run<TestWindow>(window => window.mainFrame);
 
