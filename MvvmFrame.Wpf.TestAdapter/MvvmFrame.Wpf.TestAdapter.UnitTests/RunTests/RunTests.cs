@@ -1,5 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using MvvmFrame.Wpf.Commands;
 using MvvmFrame.Wpf.Entities;
+using MvvmFrame.Wpf.TestAdapter.Helpers;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 
@@ -54,6 +56,32 @@ namespace MvvmFrame.Wpf.TestAdapter.UnitTests.RunTests
                     Assert.AreEqual(frame.NavigationService.Content, page, "Pages do not match");
                     Assert.AreEqual(page.DataContext, viewModel, "DataContext is not view-model");
                 })
+                .Run<TestWindow>(window => window.mainFrame);
+        }
+
+        [Timeout(Timeouts.FiveSecond)]
+        [Description("[Run] Check method OnClick")]
+        [TestMethod]
+        public void CheckOnClickButtonTestCase()
+        {
+            bool commandSuccess = false;
+
+            Given("Init view-model", frame => ViewModelBase.CreateViewModel<ViewModelTest>(frame))
+                .And("Init Command", viewModel =>
+                {
+                    viewModel.Command = new Command(_ => commandSuccess = true);
+                    return viewModel;
+                })
+                .And("Page navigate", viewModel => ViewModelBase.Navigate<PageTest>(viewModel))
+                .AndAsync("Wait page loaded", async result =>
+                {
+                    await Task.Delay(Timeouts.OneSecond);
+                    var page = CheckTypeAndGetPage<PageTest>();
+                    await page.WaitLoadAsync();
+                    return page;
+                })
+                .When("Click button", page => page.btnTest.OnClick())
+                .Then("Check click", () => Assert.IsTrue(commandSuccess, "Button not pressed"))
                 .Run<TestWindow>(window => window.mainFrame);
         }
     }

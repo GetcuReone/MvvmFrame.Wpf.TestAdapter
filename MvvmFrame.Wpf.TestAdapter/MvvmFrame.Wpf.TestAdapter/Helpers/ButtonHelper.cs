@@ -1,5 +1,5 @@
 ﻿using System.Diagnostics;
-using System.Windows;
+using System.Reflection;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 
@@ -11,13 +11,15 @@ namespace MvvmFrame.Wpf.TestAdapter.Helpers
     public static class ButtonHelper
     {
         /// <summary>
-        /// Click button
+        /// Emulation click button
         /// </summary>
         /// <param name="button"></param>
         /// <param name="debugInfo"></param>
-        public static void Click(this Button button, string debugInfo = null)
+        public static void OnClick(this Button button, string debugInfo = null)
         {
-            button.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
+            typeof(ButtonBase)
+                .GetMethod("OnClick", BindingFlags.Instance | BindingFlags.NonPublic)
+                .Invoke(button, new object[0]);
 
             if (debugInfo != null)
                 Debug.WriteLine(debugInfo);
