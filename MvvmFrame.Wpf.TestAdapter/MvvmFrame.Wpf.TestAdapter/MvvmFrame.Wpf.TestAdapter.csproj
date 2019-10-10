@@ -63,6 +63,7 @@
     <Compile Include="Helpers\ButtonHelper.cs" />
     <Compile Include="Helpers\FrameworkElementHelper.cs" />
     <Compile Include="Helpers\GivenWhenThenHelper.cs" />
+    <Compile Include="Helpers\LoggingHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

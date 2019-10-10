@@ -14,17 +14,17 @@ namespace MvvmFrame.Wpf.TestAdapter.Helpers
         /// Emulation click button
         /// </summary>
         /// <param name="button"></param>
-        /// <param name="debugInfo"></param>
-        public static void OnClick(this Button button, string debugInfo = null)
+        /// <param name="consoleInfo"></param>
+        public static void OnClick(this Button button, string consoleInfo = null)
         {
             typeof(ButtonBase)
                 .GetMethod("OnClick", BindingFlags.Instance | BindingFlags.NonPublic)
                 .Invoke(button, new object[0]);
 
-            if (debugInfo != null)
-                Debug.WriteLine(debugInfo);
+            if (consoleInfo != null)
+                LoggingHelper.Info(consoleInfo);
             else
-                Debug.WriteLine($"Click button {button.Name}");
+                LoggingHelper.Info($"Click button {button.Name}");
         }
     }
 }

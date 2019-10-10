@@ -1,7 +1,6 @@
 ﻿using MvvmFrame.Wpf.TestAdapter.Entities;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -19,15 +18,13 @@ namespace MvvmFrame.Wpf.TestAdapter.Helpers
             {
                 BlockBase currentBlock = blocksStack.Pop();
 
-                string startMessage = $"[{DateTime.Now}][{currentBlock.NameBlock}] start '{currentBlock.Discription}'";
-                Debug.WriteLine(startMessage);
+                LoggingHelper.Info($"[{currentBlock.NameBlock}] start '{currentBlock.Discription}'");
 
                 param = currentBlock.IsAsync
                     ? await currentBlock.ExecuteAsync(param)
                     : currentBlock.Execute(param);
 
-                string endMessage = $"[{DateTime.Now}][{currentBlock.NameBlock}] end '{currentBlock.Discription}'\n";
-                Debug.WriteLine(endMessage);
+                LoggingHelper.Info($"[{currentBlock.NameBlock}] end '{currentBlock.Discription}'\n");
             }
 
             window.Dispatcher.Invoke(window.Close);

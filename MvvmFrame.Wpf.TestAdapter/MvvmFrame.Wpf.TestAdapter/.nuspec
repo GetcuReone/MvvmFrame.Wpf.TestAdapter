@@ -25,7 +25,7 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <!-- Any details about this particular release -->
         <releaseNotes>
-          Create test adapter for MvvmFrameWpf
+          Change write log
         </releaseNotes>
         <!-- 
             The description can be used in package manager UI. Note that the
