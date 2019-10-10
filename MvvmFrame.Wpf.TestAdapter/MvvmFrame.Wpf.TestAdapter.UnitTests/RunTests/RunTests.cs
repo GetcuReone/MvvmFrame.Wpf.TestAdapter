@@ -10,7 +10,7 @@ namespace MvvmFrame.Wpf.TestAdapter.UnitTests.RunTests
     [TestClass]
     public sealed class RunTests: FrameTestBase
     {
-        [Timeout(Timeouts.FiveSecond)]
+        [Timeout(Timeouts.TenSecond)]
         [Description("[Run] Check frame transmission")]
         [TestMethod]
         public void CheckInputFrameTestCase()
