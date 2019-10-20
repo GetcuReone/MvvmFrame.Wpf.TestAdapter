@@ -3,20 +3,19 @@ using System.Threading.Tasks;
 
 namespace MvvmFrame.Wpf.TestAdapter.Entities
 {
-
     /// <summary>
-    /// Block 'given'
+    /// Given code block
     /// </summary>
     /// <typeparam name="TInput"></typeparam>
     /// <typeparam name="TOutput"></typeparam>
-    public class Given<TInput, TOutput> : BlockBase<TInput, TOutput>
+    public class GivenAsyncBlock<TInput, TOutput> : AsyncBlockBase<TInput, TOutput>
     {
-        internal Given() { }
+        internal GivenAsyncBlock() { }
 
         /// <summary>
         /// Block name
         /// </summary>
-        public override string NameBlock => "Given";
+        public override string NameBlock => "GivenAsync";
 
         #region And Given
 
@@ -26,9 +25,9 @@ namespace MvvmFrame.Wpf.TestAdapter.Entities
         /// <param name="discription"></param>
         /// <param name="givenBlock"></param>
         /// <returns></returns>
-        public virtual Given<object, object> And(string discription, Action givenBlock)
+        public virtual GivenBlock<object, object> And(string discription, Action givenBlock)
         {
-            return new Given<object, object>
+            return new GivenBlock<object, object>
             {
                 CodeBlock = _ =>
                 {
@@ -46,9 +45,9 @@ namespace MvvmFrame.Wpf.TestAdapter.Entities
         /// <param name="discription"></param>
         /// <param name="givenBlock"></param>
         /// <returns></returns>
-        public virtual Given<TOutput, object> And(string discription, Action<TOutput> givenBlock)
+        public virtual GivenBlock<TOutput, object> And(string discription, Action<TOutput> givenBlock)
         {
-            return new Given<TOutput, object>
+            return new GivenBlock<TOutput, object>
             {
                 CodeBlock = output =>
                 {
@@ -66,9 +65,9 @@ namespace MvvmFrame.Wpf.TestAdapter.Entities
         /// <param name="discription"></param>
         /// <param name="givenBlock"></param>
         /// <returns></returns>
-        public virtual Given<object, TOutput2> And<TOutput2>(string discription, Func<TOutput2> givenBlock)
+        public virtual GivenBlock<object, TOutput2> And<TOutput2>(string discription, Func<TOutput2> givenBlock)
         {
-            return new Given<object, TOutput2>
+            return new GivenBlock<object, TOutput2>
             {
                 CodeBlock = _ => givenBlock(),
                 Discription = discription,
@@ -83,9 +82,9 @@ namespace MvvmFrame.Wpf.TestAdapter.Entities
         /// <param name="discription"></param>
         /// <param name="givenBlock"></param>
         /// <returns></returns>
-        public virtual Given<TOutput, TOutput2> And<TOutput2>(string discription, Func<TOutput, TOutput2> givenBlock)
+        public virtual GivenBlock<TOutput, TOutput2> And<TOutput2>(string discription, Func<TOutput, TOutput2> givenBlock)
         {
-            return new Given<TOutput, TOutput2>
+            return new GivenBlock<TOutput, TOutput2>
             {
                 CodeBlock = givenBlock,
                 Discription = discription,
@@ -103,9 +102,9 @@ namespace MvvmFrame.Wpf.TestAdapter.Entities
         /// <param name="discription"></param>
         /// <param name="givenBlock"></param>
         /// <returns></returns>
-        public virtual GivenAsync<object, object> AndAsync(string discription, Func<ValueTask> givenBlock)
+        public virtual GivenAsyncBlock<object, object> AndAsync(string discription, Func<ValueTask> givenBlock)
         {
-            return new GivenAsync<object, object>
+            return new GivenAsyncBlock<object, object>
             {
                 CodeBlock = async _ =>
                 {
@@ -123,9 +122,9 @@ namespace MvvmFrame.Wpf.TestAdapter.Entities
         /// <param name="discription"></param>
         /// <param name="givenBlock"></param>
         /// <returns></returns>
-        public virtual GivenAsync<TOutput, object> AndAsync(string discription, Func<TOutput, ValueTask> givenBlock)
+        public virtual GivenAsyncBlock<TOutput, object> AndAsync(string discription, Func<TOutput, ValueTask> givenBlock)
         {
-            return new GivenAsync<TOutput, object>
+            return new GivenAsyncBlock<TOutput, object>
             {
                 CodeBlock = async output =>
                 {
@@ -143,9 +142,9 @@ namespace MvvmFrame.Wpf.TestAdapter.Entities
         /// <param name="discription"></param>
         /// <param name="givenBlock"></param>
         /// <returns></returns>
-        public virtual GivenAsync<object, TOutput2> AndAsync<TOutput2>(string discription, Func<ValueTask<TOutput2>> givenBlock)
+        public virtual GivenAsyncBlock<object, TOutput2> AndAsync<TOutput2>(string discription, Func<ValueTask<TOutput2>> givenBlock)
         {
-            return new GivenAsync<object, TOutput2>
+            return new GivenAsyncBlock<object, TOutput2>
             {
                 CodeBlock = _ => givenBlock(),
                 Discription = discription,
@@ -160,9 +159,9 @@ namespace MvvmFrame.Wpf.TestAdapter.Entities
         /// <param name="discription"></param>
         /// <param name="givenBlock"></param>
         /// <returns></returns>
-        public virtual GivenAsync<TOutput, TOutput2> AndAsync<TOutput2>(string discription, Func<TOutput, ValueTask<TOutput2>> givenBlock)
+        public virtual GivenAsyncBlock<TOutput, TOutput2> AndAsync<TOutput2>(string discription, Func<TOutput, ValueTask<TOutput2>> givenBlock)
         {
-            return new GivenAsync<TOutput, TOutput2>
+            return new GivenAsyncBlock<TOutput, TOutput2>
             {
                 CodeBlock = givenBlock,
                 Discription = discription,
@@ -172,7 +171,7 @@ namespace MvvmFrame.Wpf.TestAdapter.Entities
 
         #endregion
 
-        #region When
+        #region And When
 
         /// <summary>
         /// When
@@ -180,9 +179,9 @@ namespace MvvmFrame.Wpf.TestAdapter.Entities
         /// <param name="discription"></param>
         /// <param name="whenBlock"></param>
         /// <returns></returns>
-        public virtual When<object, object> When(string discription, Action whenBlock)
+        public virtual WhenBlock<object, object> When(string discription, Action whenBlock)
         {
-            return new When<object, object>
+            return new WhenBlock<object, object>
             {
                 CodeBlock = _ =>
                 {
@@ -200,9 +199,9 @@ namespace MvvmFrame.Wpf.TestAdapter.Entities
         /// <param name="discription"></param>
         /// <param name="whenBlock"></param>
         /// <returns></returns>
-        public virtual When<TOutput, object> When(string discription, Action<TOutput> whenBlock)
+        public virtual WhenBlock<TOutput, object> When(string discription, Action<TOutput> whenBlock)
         {
-            return new When<TOutput, object>
+            return new WhenBlock<TOutput, object>
             {
                 CodeBlock = output =>
                 {
@@ -220,9 +219,9 @@ namespace MvvmFrame.Wpf.TestAdapter.Entities
         /// <param name="discription"></param>
         /// <param name="whenBlock"></param>
         /// <returns></returns>
-        public virtual When<object, TOutput2> When<TOutput2>(string discription, Func<TOutput2> whenBlock)
+        public virtual WhenBlock<object, TOutput2> When<TOutput2>(string discription, Func<TOutput2> whenBlock)
         {
-            return new When<object, TOutput2>
+            return new WhenBlock<object, TOutput2>
             {
                 CodeBlock = _ => whenBlock(),
                 Discription = discription,
@@ -237,9 +236,9 @@ namespace MvvmFrame.Wpf.TestAdapter.Entities
         /// <param name="discription"></param>
         /// <param name="whenBlock"></param>
         /// <returns></returns>
-        public virtual When<TOutput, TOutput2> When<TOutput2>(string discription, Func<TOutput, TOutput2> whenBlock)
+        public virtual WhenBlock<TOutput, TOutput2> When<TOutput2>(string discription, Func<TOutput, TOutput2> whenBlock)
         {
-            return new When<TOutput, TOutput2>
+            return new WhenBlock<TOutput, TOutput2>
             {
                 CodeBlock = whenBlock,
                 Discription = discription,
@@ -249,7 +248,7 @@ namespace MvvmFrame.Wpf.TestAdapter.Entities
 
         #endregion
 
-        #region WhenAsync
+        #region And WhenAsync
 
         /// <summary>
         /// When
@@ -257,9 +256,9 @@ namespace MvvmFrame.Wpf.TestAdapter.Entities
         /// <param name="discription"></param>
         /// <param name="whenBlock"></param>
         /// <returns></returns>
-        public virtual WhenAsync<object, object> WhenAsync(string discription, Func<ValueTask> whenBlock)
+        public virtual WhenAsyncBlock<object, object> WhenAsync(string discription, Func<ValueTask> whenBlock)
         {
-            return new WhenAsync<object, object>
+            return new WhenAsyncBlock<object, object>
             {
                 CodeBlock = async _ =>
                 {
@@ -277,9 +276,9 @@ namespace MvvmFrame.Wpf.TestAdapter.Entities
         /// <param name="discription"></param>
         /// <param name="whenBlock"></param>
         /// <returns></returns>
-        public virtual WhenAsync<TOutput, object> WhenAsync(string discription, Func<TOutput, ValueTask> whenBlock)
+        public virtual WhenAsyncBlock<TOutput, object> WhenAsync(string discription, Func<TOutput, ValueTask> whenBlock)
         {
-            return new WhenAsync<TOutput, object>
+            return new WhenAsyncBlock<TOutput, object>
             {
                 CodeBlock = async output =>
                 {
@@ -297,9 +296,9 @@ namespace MvvmFrame.Wpf.TestAdapter.Entities
         /// <param name="discription"></param>
         /// <param name="whenBlock"></param>
         /// <returns></returns>
-        public virtual WhenAsync<object, TOutput2> WhenAsync<TOutput2>(string discription, Func<ValueTask<TOutput2>> whenBlock)
+        public virtual WhenAsyncBlock<object, TOutput2> WhenAsync<TOutput2>(string discription, Func<ValueTask<TOutput2>> whenBlock)
         {
-            return new WhenAsync<object, TOutput2>
+            return new WhenAsyncBlock<object, TOutput2>
             {
                 CodeBlock = _ => whenBlock(),
                 Discription = discription,
@@ -314,9 +313,9 @@ namespace MvvmFrame.Wpf.TestAdapter.Entities
         /// <param name="discription"></param>
         /// <param name="whenBlock"></param>
         /// <returns></returns>
-        public virtual WhenAsync<TOutput, TOutput2> WhenAsync<TOutput2>(string discription, Func<TOutput, ValueTask<TOutput2>> whenBlock)
+        public virtual WhenAsyncBlock<TOutput, TOutput2> WhenAsync<TOutput2>(string discription, Func<TOutput, ValueTask<TOutput2>> whenBlock)
         {
-            return new WhenAsync<TOutput, TOutput2>
+            return new WhenAsyncBlock<TOutput, TOutput2>
             {
                 CodeBlock = whenBlock,
                 Discription = discription,

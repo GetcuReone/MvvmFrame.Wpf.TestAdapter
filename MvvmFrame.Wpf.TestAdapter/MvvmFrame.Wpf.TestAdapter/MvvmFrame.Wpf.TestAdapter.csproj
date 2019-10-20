@@ -53,12 +53,12 @@
   <ItemGroup>
     <Compile Include="Entities\AsyncBlockBase.cs" />
     <Compile Include="Entities\BlockBase.cs" />
-    <Compile Include="Entities\Given.cs" />
-    <Compile Include="Entities\GivenAsync.cs" />
-    <Compile Include="Entities\Then.cs" />
-    <Compile Include="Entities\ThenAsync.cs" />
-    <Compile Include="Entities\When.cs" />
-    <Compile Include="Entities\WhenAsync.cs" />
+    <Compile Include="Entities\GivenBlock.cs" />
+    <Compile Include="Entities\GivenAsyncBlock.cs" />
+    <Compile Include="Entities\ThenBlock.cs" />
+    <Compile Include="Entities\ThenAsyncBlock.cs" />
+    <Compile Include="Entities\WhenBlock.cs" />
+    <Compile Include="Entities\WhenAsyncBlock.cs" />
     <Compile Include="FrameTestBase.cs" />
     <Compile Include="Helpers\ButtonHelper.cs" />
     <Compile Include="Helpers\FrameworkElementHelper.cs" />

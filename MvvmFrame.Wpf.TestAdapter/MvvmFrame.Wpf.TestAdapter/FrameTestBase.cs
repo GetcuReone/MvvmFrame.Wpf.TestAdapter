@@ -40,9 +40,9 @@ namespace MvvmFrame.Wpf.TestAdapter
         /// <param name="discription"></param>
         /// <param name="givenBlock"></param>
         /// <returns></returns>
-        protected virtual Given<Frame, TResult> Given<TResult>(string discription, Func<Frame, TResult> givenBlock)
+        protected virtual GivenBlock<Frame, TResult> Given<TResult>(string discription, Func<Frame, TResult> givenBlock)
         {
-            return new Given<Frame, TResult>
+            return new GivenBlock<Frame, TResult>
             {
                 Discription = discription,
                 CodeBlock = frame => 
@@ -59,9 +59,9 @@ namespace MvvmFrame.Wpf.TestAdapter
         /// <param name="discription"></param>
         /// <param name="givenBlock"></param>
         /// <returns></returns>
-        protected virtual Given<Frame, object> Given(string discription, Action<Frame> givenBlock)
+        protected virtual GivenBlock<Frame, object> Given(string discription, Action<Frame> givenBlock)
         {
-            return new Given<Frame, object>
+            return new GivenBlock<Frame, object>
             {
                 Discription = discription,
                 CodeBlock = frame => 
@@ -79,9 +79,9 @@ namespace MvvmFrame.Wpf.TestAdapter
         /// <param name="discription"></param>
         /// <param name="givenBlock"></param>
         /// <returns></returns>
-        protected virtual GivenAsync<Frame, TResult> GivenAsync<TResult>(string discription, Func<Frame, ValueTask<TResult>> givenBlock)
+        protected virtual GivenAsyncBlock<Frame, TResult> GivenAsync<TResult>(string discription, Func<Frame, ValueTask<TResult>> givenBlock)
         {
-            return new GivenAsync<Frame, TResult>
+            return new GivenAsyncBlock<Frame, TResult>
             {
                 Discription = discription,
                 CodeBlock = frame => 
@@ -98,9 +98,9 @@ namespace MvvmFrame.Wpf.TestAdapter
         /// <param name="discription"></param>
         /// <param name="givenBlock"></param>
         /// <returns></returns>
-        protected virtual GivenAsync<Frame, object> GivenAsync(string discription, Func<Frame, ValueTask> givenBlock)
+        protected virtual GivenAsyncBlock<Frame, object> GivenAsync(string discription, Func<Frame, ValueTask> givenBlock)
         {
-            return new GivenAsync<Frame, object>
+            return new GivenAsyncBlock<Frame, object>
             {
                 Discription = discription,
                 CodeBlock = async frame => 
