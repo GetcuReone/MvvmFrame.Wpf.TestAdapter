@@ -58,31 +58,5 @@ namespace MvvmFrame.Wpf.TestAdapter.UnitTests.RunTests
                 })
                 .Run<TestWindow>(window => window.mainFrame);
         }
-
-        [Timeout(Timeouts.FiveSecond)]
-        [Description("[Run] Check method OnClick")]
-        [TestMethod]
-        public void CheckOnClickButtonTestCase()
-        {
-            bool commandSuccess = false;
-
-            Given("Init view-model", frame => ViewModelBase.CreateViewModel<ViewModelTest>(frame))
-                .And("Init Command", viewModel =>
-                {
-                    viewModel.Command = new Command(_ => commandSuccess = true);
-                    return viewModel;
-                })
-                .And("Page navigate", viewModel => ViewModelBase.Navigate<PageTest>(viewModel))
-                .AndAsync("Wait page loaded", async result =>
-                {
-                    await Task.Delay(Timeouts.OneSecond);
-                    var page = CheckTypeAndGetPage<PageTest>();
-                    await page.WaitLoadAsync();
-                    return page;
-                })
-                .When("Click button", page => page.btnTest.OnClick())
-                .Then("Check click", () => Assert.IsTrue(commandSuccess, "Button not pressed"))
-                .Run<TestWindow>(window => window.mainFrame);
-        }
     }
 }

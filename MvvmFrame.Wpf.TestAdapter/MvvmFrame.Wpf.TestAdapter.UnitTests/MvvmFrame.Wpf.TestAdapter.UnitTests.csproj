@@ -42,6 +42,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GivenWhenThenQueue\Entities\ResultBlockCode.cs" />
@@ -54,6 +55,12 @@
     <Compile Include="GivenWhenThenQueue\GivenWhenThenTestBase.cs" />
     <Compile Include="GivenWhenThenQueue\GivenSyncTests.cs" />
     <Compile Include="GivenWhenThenQueue\GivenAsyncTests.cs" />
+    <Compile Include="Helper\Env\PageTest.xaml.cs">
+      <DependentUpon>PageTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\Env\ViewModel.cs" />
+    <Compile Include="Helper\ButtonHelperTests.cs" />
+    <Compile Include="Helper\FrameworkElementHelperTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RunTests\RunTests.cs" />
     <Compile Include="RunTests\PageTest.xaml.cs">
@@ -89,6 +96,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Helper\Env\PageTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="RunTests\PageTest.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
