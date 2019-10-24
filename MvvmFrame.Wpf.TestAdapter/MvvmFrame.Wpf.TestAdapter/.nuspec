@@ -27,6 +27,7 @@
         <releaseNotes>
           Changes:
           - added method FindParent
+          - added method FindChildByName
         </releaseNotes>
         <!-- 
             The description can be used in package manager UI. Note that the
