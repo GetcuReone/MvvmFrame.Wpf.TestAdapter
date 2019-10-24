@@ -25,7 +25,8 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <!-- Any details about this particular release -->
         <releaseNotes>
-          change 'naming class'
+          Changes:
+          - added method FindParent
         </releaseNotes>
         <!-- 
             The description can be used in package manager UI. Note that the

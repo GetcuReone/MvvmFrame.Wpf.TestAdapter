@@ -61,6 +61,7 @@
     <Compile Include="Entities\WhenAsyncBlock.cs" />
     <Compile Include="FrameTestBase.cs" />
     <Compile Include="Helpers\ButtonHelper.cs" />
+    <Compile Include="Helpers\DependencyObjectHelper.cs" />
     <Compile Include="Helpers\FrameworkElementHelper.cs" />
     <Compile Include="Helpers\GivenWhenThenHelper.cs" />
     <Compile Include="Helpers\LoggingHelper.cs" />
