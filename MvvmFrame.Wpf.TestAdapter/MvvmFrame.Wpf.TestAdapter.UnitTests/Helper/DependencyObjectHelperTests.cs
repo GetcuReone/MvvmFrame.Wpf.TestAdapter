@@ -34,7 +34,17 @@ namespace MvvmFrame.Wpf.TestAdapter.UnitTests.Helper
                 .When("Get frame", page => page.FindParentByType<Frame>())
                 .Then("Check result", frame => Assert.AreEqual(mainFrame, frame, "frames must be mutch"))
                 .Run<TestWindow>(win => win.mainFrame);
+        }
 
+        [TestMethod]
+        [Description("[dependency_object] check method FindChildByName")]
+        [Timeout(Timeouts.FiveSecond)]
+        public void FindChildByNameTestCase()
+        {
+            GivenNavigatePage()
+                .When("Get frame", page => page.FindChildByName<Button>("btn"))
+                .Then("Check result", button => Assert.AreEqual(CheckTypeAndGetPage<PageTest>().btn, button, "buttons must be mutch"))
+                .Run<TestWindow>(win => win.mainFrame);
         }
     }
 }
