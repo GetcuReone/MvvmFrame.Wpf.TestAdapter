@@ -28,6 +28,7 @@
           Changes:
           - added method FindParent
           - added method FindChildByName
+          - added MockedViewModelTestBase
         </releaseNotes>
         <!-- 
             The description can be used in package manager UI. Note that the
@@ -49,6 +50,8 @@
             <dependency id="System.Threading.Tasks.Extensions" version="4.5.3" />
             <dependency id="PresentationFramework" version="4.6.0" />
             <dependency id="MSTest.TestFramework" version="2.0.0" />
+            <dependency id="Moq" version="4.13.1" />
+            <dependency id="MvvmFrameWpf" version="5.0.0" />
         </dependencies>
     </metadata>
 
