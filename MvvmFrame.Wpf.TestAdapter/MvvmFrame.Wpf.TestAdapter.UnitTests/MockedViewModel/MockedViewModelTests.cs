@@ -39,5 +39,27 @@ namespace MvvmFrame.Wpf.TestAdapter.UnitTests.MockedViewModel
                 .Run<TestWindow>(win => win.mainFrame);
 
         }
+
+        [TestMethod]
+        [Description("[mock] mocking ViewModel")]
+        [Timeout(Timeouts.FiveSecond)]
+        public void CreateViewModelMockedTestCase()
+        {
+            bool isCallSetupMock = false;
+
+            _setupMock = _ => isCallSetupMock = true;
+
+            Given("Create mocked view-model", frame => frame)
+                .When("Calling CreateMockedViewModel", frame => CreateMockedViewModel(frame))
+                .Then("Check result", viewModel =>
+                {
+                    Assert.IsTrue(isCallSetupMock, "method SetupMock must be called");
+                    Assert.IsNotNull(viewModel, "view-model cannot be null");
+                    Assert.IsNotNull(viewModel.NavigationManager, "NavigationManager cannot be null");
+                    Assert.IsNotNull(viewModel.UiServices, "UiServices cannot be null");
+                })
+                .Run<TestWindow>(win => win.mainFrame);
+
+        }
     }
 }
