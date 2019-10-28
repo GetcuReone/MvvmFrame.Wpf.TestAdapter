@@ -1,4 +1,6 @@
 ﻿using Moq;
+using MvvmFrame.Interfaces;
+using MvvmFrame.Wpf.Interfaces;
 using System.Reflection;
 using System.Windows.Controls;
 
@@ -21,15 +23,16 @@ namespace MvvmFrame.Wpf.TestAdapter
         /// </summary>
         /// <param name="frame"></param>
         /// <param name="behavior">behavior of the mock</param>
-        /// <param name="callBase">Whether the base member virtual implementation will be called for mocked classes if no setup is matched. Defaults to false</param>
+        /// <param name="modelOptions"></param>
+        /// <param name="configUiServices"></param>
         /// <returns></returns>
-        protected virtual TViewModel CreateMockedViewModel(Frame frame, MockBehavior behavior = MockBehavior.Default, bool callBase = false)
+        protected virtual TViewModel CreateMockedViewModel(Frame frame, MockBehavior behavior = MockBehavior.Default, IModelOptions modelOptions = null, IConfigUiServices configUiServices = null)
         {
             var mockViewModel = new Mock<TViewModel>(behavior);
 
             SetupMock(mockViewModel);
 
-            var viewModel = ViewModelBase.CreateViewModel<PrivateViewModel>(frame);
+            var viewModel = ViewModelBase.CreateViewModel<PrivateViewModel>(frame, modelOptions, configUiServices);
 
             var filter = BindingFlags.Public | BindingFlags.Instance | BindingFlags.NonPublic;
 
@@ -39,7 +42,6 @@ namespace MvvmFrame.Wpf.TestAdapter
                 .SetValue(mockViewModel.Object, viewModel.UiServices);
             mockViewModel.Object.ModelOptions = viewModel.ModelOptions;
 
-            mockViewModel.CallBase = callBase;
             return mockViewModel.Object;
 
         }

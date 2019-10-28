@@ -4,7 +4,7 @@
         <!-- The identifier that must be unique within the hosting gallery -->
         <id>MvvmFrameWpf.TestAdapter</id>
         <!-- The package version number that is used when resolving dependencies -->
-        <version>1.2.0</version>
+        <version>1.2.1</version>
         <!-- Authors contain text that appears directly on the gallery -->
         <authors>GetcuReone</authors>
         <!-- 
@@ -26,9 +26,7 @@
         <!-- Any details about this particular release -->
         <releaseNotes>
           Changes:
-          - added method FindParent
-          - added method FindChildByName
-          - added MockedViewModelTestBase
+          - fix CreateMockedViewModel
         </releaseNotes>
         <!-- 
             The description can be used in package manager UI. Note that the

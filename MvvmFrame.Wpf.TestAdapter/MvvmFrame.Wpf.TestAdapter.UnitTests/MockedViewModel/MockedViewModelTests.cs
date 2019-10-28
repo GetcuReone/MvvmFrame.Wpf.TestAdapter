@@ -29,7 +29,7 @@ namespace MvvmFrame.Wpf.TestAdapter.UnitTests.MockedViewModel
                     .Callback(() => _createObjectCallCount++);
             };
 
-            Given("Create mocked view-model", frame => CreateMockedViewModel(frame, callBase:true, behavior: MockBehavior.Loose))
+            Given("Create mocked view-model", frame => CreateMockedViewModel(frame, behavior: MockBehavior.Loose))
                 .When("Calling CreateObject", viewModel => viewModel.CreateObject(_ => new TestObj(), (object)null))
                 .Then("Check result", result => 
                 {
