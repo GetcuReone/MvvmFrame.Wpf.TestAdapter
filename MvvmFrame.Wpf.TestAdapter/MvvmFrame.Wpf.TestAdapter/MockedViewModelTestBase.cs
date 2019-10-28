@@ -1,7 +1,9 @@
 ﻿using Moq;
 using MvvmFrame.Interfaces;
+using MvvmFrame.Wpf.EventArgs;
 using MvvmFrame.Wpf.Interfaces;
 using System.Reflection;
+using System.Threading.Tasks;
 using System.Windows.Controls;
 
 namespace MvvmFrame.Wpf.TestAdapter
@@ -46,9 +48,17 @@ namespace MvvmFrame.Wpf.TestAdapter
 
         }
 
-        private class PrivateViewModel: ViewModelBase
+        private class PrivateViewModel : ViewModelBase
         {
+            protected override void Initialize()
+            {
+            }
 
+            protected override ValueTask OnGoPageAsync(object navigateParam) => default;
+
+            protected override ValueTask OnLeavePageAsync(NavigatingEventArgs args) => default;
+
+            protected override ValueTask OnLoadPageAsync() => default;
         }
     }
 }
