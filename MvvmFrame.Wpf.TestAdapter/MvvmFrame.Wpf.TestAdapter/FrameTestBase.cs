@@ -119,7 +119,7 @@ namespace MvvmFrame.Wpf.TestAdapter
         /// Thank you very much https://www.meziantou.net/unit-tests-with-a-wpf-window.htm
         /// </remarks>
         [TestCleanup]
-        public void CleanUp()
+        public virtual void CleanUp()
         {
             Dispatcher.CurrentDispatcher.InvokeShutdown();
         }
