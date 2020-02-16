@@ -11,8 +11,7 @@ variables:
   buildConfiguration: 'Release'
   majorVersion: '2'
   packageVersion: '$(majorVersion).$(Build.BuildNumber)'
-  packageFileName: 'MvvmFrameWpf.TestAdapter.$(packageVersion).nupkg'
-  nugetProjectName: 'MvvmFrame'
+  nugetProjectName: 'MvvmFrame.Wpf.TestAdapter'
 
 steps:
 - template: pipeline_steps/step_install_snk.yml
@@ -27,6 +26,6 @@ steps:
   displayName: "NuGet push GetcuReone source"
   inputs:
     command: 'push'
-    packagesToPush: '$(Build.ArtifactStagingDirectory)/$(solutionName)/$(packageFileName)'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/$(solutionName)/*.nupkg'
     nuGetFeedType: 'internal'
     publishVstsFeed: 'd5079c70-9bc4-4da1-b3c9-feb9869dfc91'

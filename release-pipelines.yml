@@ -13,8 +13,7 @@ variables:
   minorVersion: '0'
   patchVersion: '0'
   packageVersion: '$(majorVersion).$(minorVersion).$(patchVersion)'
-  packageFileName: 'MvvmFrameWpf.TestAdapter.$(packageVersion).nupkg'
-  nugetProjectName: 'MvvmFrame'
+  nugetProjectName: 'MvvmFrame.Wpf.TestAdapter'
 
 steps:
 - template: pipeline_steps/step_install_snk.yml
@@ -29,6 +28,6 @@ steps:
   displayName: "NuGet push nuget.org"
   inputs:
     command: 'push'
-    packagesToPush: '$(Build.ArtifactStagingDirectory)/$(solutionName)/$(packageFileName)'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/$(solutionName)/*.nupkg'
     nuGetFeedType: 'external'
     publishFeedCredentials: 'nuget.org'

@@ -10,8 +10,7 @@ variables:
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Debug'
   packageVersion: '1.0.0'
-  packageFileName: 'MvvmFrameWpf.TestAdapter.$(packageVersion).nupkg'
-  nugetProjectName: 'MvvmFrame'
+  nugetProjectName: 'MvvmFrame.Wpf.TestAdapter'
 
 steps:
 - template: pipeline_steps/step_restore_build_pack.yml
