@@ -178,7 +178,8 @@ namespace GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities
         /// run given-block-then
         /// </summary>
         /// <param name="getFrame"></param>
-        public virtual void Run<TWindow>(Func<TWindow, Frame> getFrame)
+        /// <param name="maxWaitTime">maximum application runtime in another thread</param>
+        public virtual void Run<TWindow>(Func<TWindow, Frame> getFrame, int maxWaitTime)
             where TWindow : Window, new()
         {
             Stack<BlockBase> blocksStack = new Stack<BlockBase>();
@@ -194,11 +195,14 @@ namespace GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities
                     block = block.PreviousBlock;
             }
 
-            TWindow window = new TWindow();
+            ThreadHelper.RunActinInSTAThread(() =>
+            {
+                TWindow window = new TWindow();
 
-            window.Loaded += async (sender, e) => await GivenWhenThenHelper.RunCodeBlockAndCloseWindow(blocksStack, window, getFrame);
+                window.Loaded += async (sender, e) => await GivenWhenThenHelper.RunCodeBlockAndCloseWindow(blocksStack, window, getFrame);
 
-            window.ShowDialog();
+                window.ShowDialog();
+            }, maxWaitTime);
         }
     }
 }
