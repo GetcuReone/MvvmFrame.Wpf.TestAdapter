@@ -813,5 +813,18 @@
             <param name="configUiServices"></param>
             <returns></returns>
         </member>
+        <member name="T:GetcuReone.MvvmFrame.Wpf.TestAdapter.TestBase">
+            <summary>
+            Class base for test
+            </summary>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.TestBase.ExpectedException``1(System.Action)">
+            <summary>
+            Method expects error from <paramref name="action"/>
+            </summary>
+            <typeparam name="TException">type exception</typeparam>
+            <param name="action">action</param>
+            <returns></returns>
+        </member>
     </members>
 </doc>
