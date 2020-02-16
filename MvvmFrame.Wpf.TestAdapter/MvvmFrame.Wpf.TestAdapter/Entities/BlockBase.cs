@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace MvvmFrame.Wpf.TestAdapter.Entities
+namespace GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities
 {
     /// <summary>
     /// Code block

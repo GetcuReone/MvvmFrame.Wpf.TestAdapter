@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MvvmFrame.Wpf.TestAdapter.Helpers
+namespace GetcuReone.MvvmFrame.Wpf.TestAdapter.Helpers
 {
     internal static class LoggingHelper
     {

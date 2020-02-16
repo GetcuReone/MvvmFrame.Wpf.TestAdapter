@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Media;
 
-namespace MvvmFrame.Wpf.TestAdapter.Helpers
+namespace GetcuReone.MvvmFrame.Wpf.TestAdapter.Helpers
 {
     /// <summary>
     /// <see cref="DependencyObject"/> helper

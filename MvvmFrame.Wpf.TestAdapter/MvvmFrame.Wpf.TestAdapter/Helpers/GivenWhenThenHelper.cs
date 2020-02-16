@@ -1,11 +1,11 @@
-﻿using MvvmFrame.Wpf.TestAdapter.Entities;
+﻿using GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace MvvmFrame.Wpf.TestAdapter.Helpers
+namespace GetcuReone.MvvmFrame.Wpf.TestAdapter.Helpers
 {
     internal static class GivenWhenThenHelper
     {

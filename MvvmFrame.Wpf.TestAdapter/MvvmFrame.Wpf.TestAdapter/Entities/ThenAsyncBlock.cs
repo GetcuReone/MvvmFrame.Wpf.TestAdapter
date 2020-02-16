@@ -1,11 +1,11 @@
-﻿using MvvmFrame.Wpf.TestAdapter.Helpers;
+﻿using GetcuReone.MvvmFrame.Wpf.TestAdapter.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace MvvmFrame.Wpf.TestAdapter.Entities
+namespace GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities
 {
     /// <summary>
     /// Block 'Then'

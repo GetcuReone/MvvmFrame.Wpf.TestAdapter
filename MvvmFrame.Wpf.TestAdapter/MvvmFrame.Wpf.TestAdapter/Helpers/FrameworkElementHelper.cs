@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using System.Windows;
 
-namespace MvvmFrame.Wpf.TestAdapter.Helpers
+namespace GetcuReone.MvvmFrame.Wpf.TestAdapter.Helpers
 {
     /// <summary>
     /// FrameworkElement helper

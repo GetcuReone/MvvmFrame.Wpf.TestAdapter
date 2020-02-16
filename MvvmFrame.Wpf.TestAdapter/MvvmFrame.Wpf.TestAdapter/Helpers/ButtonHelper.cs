@@ -3,7 +3,7 @@ using System.Reflection;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 
-namespace MvvmFrame.Wpf.TestAdapter.Helpers
+namespace GetcuReone.MvvmFrame.Wpf.TestAdapter.Helpers
 {
     /// <summary>
     /// Helper for <see cref="Button"/>

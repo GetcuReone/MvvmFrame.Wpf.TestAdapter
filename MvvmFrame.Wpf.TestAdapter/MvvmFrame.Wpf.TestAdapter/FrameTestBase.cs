@@ -1,11 +1,11 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using MvvmFrame.Wpf.TestAdapter.Entities;
+﻿using GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Threading;
 
-namespace MvvmFrame.Wpf.TestAdapter
+namespace GetcuReone.MvvmFrame.Wpf.TestAdapter
 {
     /// <summary>
     /// base class for testing pages written on the MvvmFrame.Wpf
