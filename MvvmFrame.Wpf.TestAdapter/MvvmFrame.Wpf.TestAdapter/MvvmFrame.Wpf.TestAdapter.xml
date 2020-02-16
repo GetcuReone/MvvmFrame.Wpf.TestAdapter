@@ -721,7 +721,7 @@
             <param name="givenBlock"></param>
             <returns></returns>
         </member>
-        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.FrameTestBase.CleanUp">
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.FrameTestBase.Cleanup">
             <summary>
             Clean up
             </summary>

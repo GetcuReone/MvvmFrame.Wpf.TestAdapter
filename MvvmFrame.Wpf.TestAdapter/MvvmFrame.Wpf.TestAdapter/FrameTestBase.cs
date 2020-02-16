@@ -11,7 +11,7 @@ namespace GetcuReone.MvvmFrame.Wpf.TestAdapter
     /// base class for testing pages written on the MvvmFrame.Wpf
     /// </summary>
     [TestClass]
-    public abstract class FrameTestBase
+    public abstract class FrameTestBase : TestBase
     {
         private Frame _frame;
 
@@ -119,7 +119,7 @@ namespace GetcuReone.MvvmFrame.Wpf.TestAdapter
         /// Thank you very much https://www.meziantou.net/unit-tests-with-a-wpf-window.htm
         /// </remarks>
         [TestCleanup]
-        public virtual void CleanUp()
+        public virtual void Cleanup()
         {
             Dispatcher.CurrentDispatcher.InvokeShutdown();
         }
