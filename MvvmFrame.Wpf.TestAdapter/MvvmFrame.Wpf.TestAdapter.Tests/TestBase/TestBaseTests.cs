@@ -35,5 +35,29 @@ namespace MvvmFrame.Wpf.TestAdapter.Tests.TestBase
 
             Assert.Fail("The method worked without errors");
         }
+
+        [Timeout(Timeouts.HundredMillisecodnds)]
+        [TestMethod]
+        [Description("[test_base][expected_exception][negative] method worked without errors")]
+        public void MethodWorkedWithoutErrorsTestCase()
+        {
+            string message = "Assert.Fail failed. The method worked without errors";
+            
+            try
+            {
+                ExpectedException<Exception>(() => { });
+            }
+            catch (AssertFailedException ex)
+            {
+                Assert.AreEqual(message, ex.Message);
+                return;
+            }
+            catch
+            {
+                throw;
+            }
+
+            Assert.Fail("The method did not throw an error");
+        }
     }
 }
