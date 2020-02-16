@@ -1,12 +1,12 @@
-﻿using Moq;
-using MvvmFrame.Interfaces;
-using MvvmFrame.Wpf.EventArgs;
-using MvvmFrame.Wpf.Interfaces;
+﻿using GetcuReone.MvvmFrame.Interfaces;
+using GetcuReone.MvvmFrame.Wpf.EventArgs;
+using GetcuReone.MvvmFrame.Wpf.Interfaces;
+using Moq;
 using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 
-namespace MvvmFrame.Wpf.TestAdapter
+namespace GetcuReone.MvvmFrame.Wpf.TestAdapter
 {
     /// <summary>
     /// Base class for tests with mocked view-models

@@ -1,0 +1,830 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MvvmFrame.Wpf.TestAdapter</name>
+    </assembly>
+    <members>
+        <member name="T:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.AsyncBlockBase`2">
+            <summary>
+            Async code block
+            </summary>
+            <typeparam name="TInput"></typeparam>
+            <typeparam name="TOutput"></typeparam>
+        </member>
+        <member name="P:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.AsyncBlockBase`2.CodeBlock">
+            <summary>
+            Code block
+            </summary>
+        </member>
+        <member name="P:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.AsyncBlockBase`2.IsAsync">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.BlockBase">
+            <summary>
+            Code block
+            </summary>
+        </member>
+        <member name="P:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.BlockBase.NameBlock">
+            <summary>
+            Block name
+            </summary>
+        </member>
+        <member name="P:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.BlockBase.Discription">
+            <summary>
+            Discription
+            </summary>
+        </member>
+        <member name="P:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.BlockBase.IsAsync">
+            <summary>
+            Is async code block
+            </summary>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.BlockBase.ExecuteAsync(System.Object)">
+            <summary>
+            execute
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.BlockBase`2">
+            <summary>
+            Code block
+            </summary>
+        </member>
+        <member name="P:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.BlockBase`2.CodeBlock">
+            <summary>
+            Code block
+            </summary>
+        </member>
+        <member name="T:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.GivenAsyncBlock`2">
+            <summary>
+            Given code block
+            </summary>
+            <typeparam name="TInput"></typeparam>
+            <typeparam name="TOutput"></typeparam>
+        </member>
+        <member name="P:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.GivenAsyncBlock`2.NameBlock">
+            <summary>
+            Block name
+            </summary>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.GivenAsyncBlock`2.And(System.String,System.Action)">
+            <summary>
+            And given
+            </summary>
+            <param name="discription"></param>
+            <param name="givenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.GivenAsyncBlock`2.And(System.String,System.Action{`1})">
+            <summary>
+            And given
+            </summary>
+            <param name="discription"></param>
+            <param name="givenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.GivenAsyncBlock`2.And``1(System.String,System.Func{``0})">
+            <summary>
+            And given
+            </summary>
+            <param name="discription"></param>
+            <param name="givenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.GivenAsyncBlock`2.And``1(System.String,System.Func{`1,``0})">
+            <summary>
+            And given
+            </summary>
+            <typeparam name="TOutput2"></typeparam>
+            <param name="discription"></param>
+            <param name="givenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.GivenAsyncBlock`2.AndAsync(System.String,System.Func{System.Threading.Tasks.ValueTask})">
+            <summary>
+            And given
+            </summary>
+            <param name="discription"></param>
+            <param name="givenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.GivenAsyncBlock`2.AndAsync(System.String,System.Func{`1,System.Threading.Tasks.ValueTask})">
+            <summary>
+            And given
+            </summary>
+            <param name="discription"></param>
+            <param name="givenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.GivenAsyncBlock`2.AndAsync``1(System.String,System.Func{System.Threading.Tasks.ValueTask{``0}})">
+            <summary>
+            And given
+            </summary>
+            <param name="discription"></param>
+            <param name="givenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.GivenAsyncBlock`2.AndAsync``1(System.String,System.Func{`1,System.Threading.Tasks.ValueTask{``0}})">
+            <summary>
+            And given
+            </summary>
+            <typeparam name="TOutput2"></typeparam>
+            <param name="discription"></param>
+            <param name="givenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.GivenAsyncBlock`2.When(System.String,System.Action)">
+            <summary>
+            When
+            </summary>
+            <param name="discription"></param>
+            <param name="whenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.GivenAsyncBlock`2.When(System.String,System.Action{`1})">
+            <summary>
+            When
+            </summary>
+            <param name="discription"></param>
+            <param name="whenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.GivenAsyncBlock`2.When``1(System.String,System.Func{``0})">
+            <summary>
+            When
+            </summary>
+            <param name="discription"></param>
+            <param name="whenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.GivenAsyncBlock`2.When``1(System.String,System.Func{`1,``0})">
+            <summary>
+            When
+            </summary>
+            <typeparam name="TOutput2"></typeparam>
+            <param name="discription"></param>
+            <param name="whenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.GivenAsyncBlock`2.WhenAsync(System.String,System.Func{System.Threading.Tasks.ValueTask})">
+            <summary>
+            When
+            </summary>
+            <param name="discription"></param>
+            <param name="whenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.GivenAsyncBlock`2.WhenAsync(System.String,System.Func{`1,System.Threading.Tasks.ValueTask})">
+            <summary>
+            When
+            </summary>
+            <param name="discription"></param>
+            <param name="whenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.GivenAsyncBlock`2.WhenAsync``1(System.String,System.Func{System.Threading.Tasks.ValueTask{``0}})">
+            <summary>
+            When
+            </summary>
+            <param name="discription"></param>
+            <param name="whenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.GivenAsyncBlock`2.WhenAsync``1(System.String,System.Func{`1,System.Threading.Tasks.ValueTask{``0}})">
+            <summary>
+            When
+            </summary>
+            <typeparam name="TOutput2"></typeparam>
+            <param name="discription"></param>
+            <param name="whenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.GivenBlock`2">
+            <summary>
+            Block 'given'
+            </summary>
+            <typeparam name="TInput"></typeparam>
+            <typeparam name="TOutput"></typeparam>
+        </member>
+        <member name="P:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.GivenBlock`2.NameBlock">
+            <summary>
+            Block name
+            </summary>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.GivenBlock`2.And(System.String,System.Action)">
+            <summary>
+            And given
+            </summary>
+            <param name="discription"></param>
+            <param name="givenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.GivenBlock`2.And(System.String,System.Action{`1})">
+            <summary>
+            And given
+            </summary>
+            <param name="discription"></param>
+            <param name="givenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.GivenBlock`2.And``1(System.String,System.Func{``0})">
+            <summary>
+            And given
+            </summary>
+            <param name="discription"></param>
+            <param name="givenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.GivenBlock`2.And``1(System.String,System.Func{`1,``0})">
+            <summary>
+            And given
+            </summary>
+            <typeparam name="TOutput2"></typeparam>
+            <param name="discription"></param>
+            <param name="givenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.GivenBlock`2.AndAsync(System.String,System.Func{System.Threading.Tasks.ValueTask})">
+            <summary>
+            And given
+            </summary>
+            <param name="discription"></param>
+            <param name="givenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.GivenBlock`2.AndAsync(System.String,System.Func{`1,System.Threading.Tasks.ValueTask})">
+            <summary>
+            And given
+            </summary>
+            <param name="discription"></param>
+            <param name="givenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.GivenBlock`2.AndAsync``1(System.String,System.Func{System.Threading.Tasks.ValueTask{``0}})">
+            <summary>
+            And given
+            </summary>
+            <param name="discription"></param>
+            <param name="givenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.GivenBlock`2.AndAsync``1(System.String,System.Func{`1,System.Threading.Tasks.ValueTask{``0}})">
+            <summary>
+            And given
+            </summary>
+            <typeparam name="TOutput2"></typeparam>
+            <param name="discription"></param>
+            <param name="givenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.GivenBlock`2.When(System.String,System.Action)">
+            <summary>
+            When
+            </summary>
+            <param name="discription"></param>
+            <param name="whenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.GivenBlock`2.When(System.String,System.Action{`1})">
+            <summary>
+            When
+            </summary>
+            <param name="discription"></param>
+            <param name="whenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.GivenBlock`2.When``1(System.String,System.Func{``0})">
+            <summary>
+            When
+            </summary>
+            <param name="discription"></param>
+            <param name="whenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.GivenBlock`2.When``1(System.String,System.Func{`1,``0})">
+            <summary>
+            When
+            </summary>
+            <typeparam name="TOutput2"></typeparam>
+            <param name="discription"></param>
+            <param name="whenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.GivenBlock`2.WhenAsync(System.String,System.Func{System.Threading.Tasks.ValueTask})">
+            <summary>
+            When
+            </summary>
+            <param name="discription"></param>
+            <param name="whenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.GivenBlock`2.WhenAsync(System.String,System.Func{`1,System.Threading.Tasks.ValueTask})">
+            <summary>
+            When
+            </summary>
+            <param name="discription"></param>
+            <param name="whenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.GivenBlock`2.WhenAsync``1(System.String,System.Func{System.Threading.Tasks.ValueTask{``0}})">
+            <summary>
+            When
+            </summary>
+            <param name="discription"></param>
+            <param name="whenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.GivenBlock`2.WhenAsync``1(System.String,System.Func{`1,System.Threading.Tasks.ValueTask{``0}})">
+            <summary>
+            When
+            </summary>
+            <typeparam name="TOutput2"></typeparam>
+            <param name="discription"></param>
+            <param name="whenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.ThenAsyncBlock`2">
+            <summary>
+            Block 'Then'
+            </summary>
+            <typeparam name="TInput"></typeparam>
+            <typeparam name="TOutput"></typeparam>
+        </member>
+        <member name="P:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.ThenAsyncBlock`2.NameBlock">
+            <summary>
+            Block name
+            </summary>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.ThenAsyncBlock`2.And(System.String,System.Action)">
+            <summary>
+            And this
+            </summary>
+            <param name="discription"></param>
+            <param name="thisBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.ThenAsyncBlock`2.And(System.String,System.Action{`1})">
+            <summary>
+            And this
+            </summary>
+            <param name="discription"></param>
+            <param name="thisBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.ThenAsyncBlock`2.And``1(System.String,System.Func{``0})">
+            <summary>
+            And this
+            </summary>
+            <param name="discription"></param>
+            <param name="thisBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.ThenAsyncBlock`2.And``1(System.String,System.Func{`1,``0})">
+            <summary>
+            And this
+            </summary>
+            <typeparam name="TOutput2"></typeparam>
+            <param name="discription"></param>
+            <param name="thisBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.ThenAsyncBlock`2.AndAsync(System.String,System.Func{System.Threading.Tasks.ValueTask})">
+            <summary>
+            this
+            </summary>
+            <param name="discription"></param>
+            <param name="thisBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.ThenAsyncBlock`2.AndAsync(System.String,System.Func{`1,System.Threading.Tasks.ValueTask})">
+            <summary>
+            this
+            </summary>
+            <param name="discription"></param>
+            <param name="thisBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.ThenAsyncBlock`2.AndAsync``1(System.String,System.Func{System.Threading.Tasks.ValueTask{``0}})">
+            <summary>
+            this
+            </summary>
+            <param name="discription"></param>
+            <param name="thisBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.ThenAsyncBlock`2.AndAsync``1(System.String,System.Func{`1,System.Threading.Tasks.ValueTask{``0}})">
+            <summary>
+            this
+            </summary>
+            <typeparam name="TOutput2"></typeparam>
+            <param name="discription"></param>
+            <param name="thisBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.ThenAsyncBlock`2.Run``1(System.Func{``0,System.Windows.Controls.Frame},System.Int32)">
+            <summary>
+            run given-block-then
+            </summary>
+            <param name="getFrame"></param>
+            <param name="maxWaitTime">maximum application runtime in another thread</param>
+        </member>
+        <member name="T:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.ThenBlock`2">
+            <summary>
+            Block 'Then'
+            </summary>
+            <typeparam name="TInput"></typeparam>
+            <typeparam name="TOutput"></typeparam>
+        </member>
+        <member name="P:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.ThenBlock`2.NameBlock">
+            <summary>
+            Block name
+            </summary>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.ThenBlock`2.And(System.String,System.Action)">
+            <summary>
+            And this
+            </summary>
+            <param name="discription"></param>
+            <param name="thisBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.ThenBlock`2.And(System.String,System.Action{`1})">
+            <summary>
+            And this
+            </summary>
+            <param name="discription"></param>
+            <param name="thisBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.ThenBlock`2.And``1(System.String,System.Func{``0})">
+            <summary>
+            And this
+            </summary>
+            <param name="discription"></param>
+            <param name="thisBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.ThenBlock`2.And``1(System.String,System.Func{`1,``0})">
+            <summary>
+            And this
+            </summary>
+            <typeparam name="TOutput2"></typeparam>
+            <param name="discription"></param>
+            <param name="thisBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.ThenBlock`2.AndAsync(System.String,System.Func{System.Threading.Tasks.ValueTask})">
+            <summary>
+            this
+            </summary>
+            <param name="discription"></param>
+            <param name="thisBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.ThenBlock`2.AndAsync(System.String,System.Func{`1,System.Threading.Tasks.ValueTask})">
+            <summary>
+            this
+            </summary>
+            <param name="discription"></param>
+            <param name="thisBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.ThenBlock`2.AndAsync``1(System.String,System.Func{System.Threading.Tasks.ValueTask{``0}})">
+            <summary>
+            this
+            </summary>
+            <param name="discription"></param>
+            <param name="thisBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.ThenBlock`2.AndAsync``1(System.String,System.Func{`1,System.Threading.Tasks.ValueTask{``0}})">
+            <summary>
+            this
+            </summary>
+            <typeparam name="TOutput2"></typeparam>
+            <param name="discription"></param>
+            <param name="thisBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.ThenBlock`2.Run``1(System.Func{``0,System.Windows.Controls.Frame},System.Int32)">
+            <summary>
+            run given-block-then
+            </summary>
+            <param name="getFrame"></param>
+            <param name="maxWaitTime">maximum application runtime in another thread</param>
+        </member>
+        <member name="T:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.WhenAsyncBlock`2">
+            <summary>
+            Block 'When'
+            </summary>
+            <typeparam name="TInput"></typeparam>
+            <typeparam name="TOutput"></typeparam>
+        </member>
+        <member name="P:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.WhenAsyncBlock`2.NameBlock">
+            <summary>
+            Block name
+            </summary>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.WhenAsyncBlock`2.Then(System.String,System.Action)">
+            <summary>
+            then
+            </summary>
+            <param name="discription"></param>
+            <param name="thenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.WhenAsyncBlock`2.Then(System.String,System.Action{`1})">
+            <summary>
+            then
+            </summary>
+            <param name="discription"></param>
+            <param name="thenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.WhenAsyncBlock`2.Then``1(System.String,System.Func{``0})">
+            <summary>
+            then
+            </summary>
+            <param name="discription"></param>
+            <param name="thenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.WhenAsyncBlock`2.Then``1(System.String,System.Func{`1,``0})">
+            <summary>
+            this
+            </summary>
+            <typeparam name="TOutput2"></typeparam>
+            <param name="discription"></param>
+            <param name="thenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.WhenAsyncBlock`2.ThenAsync(System.String,System.Func{System.Threading.Tasks.ValueTask})">
+            <summary>
+            then
+            </summary>
+            <param name="discription"></param>
+            <param name="thenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.WhenAsyncBlock`2.ThenAsync(System.String,System.Func{`1,System.Threading.Tasks.ValueTask})">
+            <summary>
+            then
+            </summary>
+            <param name="discription"></param>
+            <param name="thenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.WhenAsyncBlock`2.ThenAsync``1(System.String,System.Func{System.Threading.Tasks.ValueTask{``0}})">
+            <summary>
+            then
+            </summary>
+            <param name="discription"></param>
+            <param name="thenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.WhenAsyncBlock`2.ThenAsync``1(System.String,System.Func{`1,System.Threading.Tasks.ValueTask{``0}})">
+            <summary>
+            this
+            </summary>
+            <typeparam name="TOutput2"></typeparam>
+            <param name="discription"></param>
+            <param name="thenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.WhenBlock`2">
+            <summary>
+            Block 'When'
+            </summary>
+            <typeparam name="TInput"></typeparam>
+            <typeparam name="TOutput"></typeparam>
+        </member>
+        <member name="P:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.WhenBlock`2.NameBlock">
+            <summary>
+            Block name
+            </summary>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.WhenBlock`2.Then(System.String,System.Action)">
+            <summary>
+            then
+            </summary>
+            <param name="discription"></param>
+            <param name="thenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.WhenBlock`2.Then(System.String,System.Action{`1})">
+            <summary>
+            then
+            </summary>
+            <param name="discription"></param>
+            <param name="thenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.WhenBlock`2.Then``1(System.String,System.Func{``0})">
+            <summary>
+            then
+            </summary>
+            <param name="discription"></param>
+            <param name="thenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.WhenBlock`2.Then``1(System.String,System.Func{`1,``0})">
+            <summary>
+            this
+            </summary>
+            <typeparam name="TOutput2"></typeparam>
+            <param name="discription"></param>
+            <param name="thenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.WhenBlock`2.ThenAsync(System.String,System.Func{System.Threading.Tasks.ValueTask})">
+            <summary>
+            then
+            </summary>
+            <param name="discription"></param>
+            <param name="thenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.WhenBlock`2.ThenAsync(System.String,System.Func{`1,System.Threading.Tasks.ValueTask})">
+            <summary>
+            then
+            </summary>
+            <param name="discription"></param>
+            <param name="thenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.WhenBlock`2.ThenAsync``1(System.String,System.Func{System.Threading.Tasks.ValueTask{``0}})">
+            <summary>
+            then
+            </summary>
+            <param name="discription"></param>
+            <param name="thenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.WhenBlock`2.ThenAsync``1(System.String,System.Func{`1,System.Threading.Tasks.ValueTask{``0}})">
+            <summary>
+            this
+            </summary>
+            <typeparam name="TOutput2"></typeparam>
+            <param name="discription"></param>
+            <param name="thenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GetcuReone.MvvmFrame.Wpf.TestAdapter.Exceptions.ThreadAnotherException">
+            <summary>
+            Error in another thread
+            </summary>
+        </member>
+        <member name="T:GetcuReone.MvvmFrame.Wpf.TestAdapter.FrameTestBase">
+            <summary>
+            base class for testing pages written on the MvvmFrame.Wpf
+            </summary>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.FrameTestBase.CheckTypeAndGetPage``1">
+            <summary>
+            Check the type of the current page and return
+            </summary>
+            <typeparam name="TPage"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.FrameTestBase.Given``1(System.String,System.Func{System.Windows.Controls.Frame,``0})">
+            <summary>
+            Block given
+            </summary>
+            <param name="discription"></param>
+            <param name="givenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.FrameTestBase.Given(System.String,System.Action{System.Windows.Controls.Frame})">
+            <summary>
+            Block given
+            </summary>
+            <param name="discription"></param>
+            <param name="givenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.FrameTestBase.GivenAsync``1(System.String,System.Func{System.Windows.Controls.Frame,System.Threading.Tasks.ValueTask{``0}})">
+            <summary>
+            Block given
+            </summary>
+            <param name="discription"></param>
+            <param name="givenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.FrameTestBase.GivenAsync(System.String,System.Func{System.Windows.Controls.Frame,System.Threading.Tasks.ValueTask})">
+            <summary>
+            Block given
+            </summary>
+            <param name="discription"></param>
+            <param name="givenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.FrameTestBase.CleanUp">
+            <summary>
+            Clean up
+            </summary>
+            <remarks>
+            Thank you very much https://www.meziantou.net/unit-tests-with-a-wpf-window.htm
+            </remarks>
+        </member>
+        <member name="T:GetcuReone.MvvmFrame.Wpf.TestAdapter.Helpers.ButtonHelper">
+            <summary>
+            Helper for <see cref="T:System.Windows.Controls.Button"/>
+            </summary>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Helpers.ButtonHelper.OnClick(System.Windows.Controls.Button,System.String)">
+            <summary>
+            Emulation click button
+            </summary>
+            <param name="button"></param>
+            <param name="consoleInfo"></param>
+        </member>
+        <member name="T:GetcuReone.MvvmFrame.Wpf.TestAdapter.Helpers.DependencyObjectHelper">
+            <summary>
+            <see cref="T:System.Windows.DependencyObject"/> helper
+            </summary>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Helpers.DependencyObjectHelper.FindParentByType``1(System.Windows.DependencyObject)">
+            <summary>
+            Find parent
+            </summary>
+            <typeparam name="TDependencyObject">type of object sought</typeparam>
+            <param name="child"></param>
+            <returns>parent object</returns>
+            <remarks>
+            Thanks https://stackoverflow.com/questions/15198104/find-parent-of-control-by-name
+            </remarks>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Helpers.DependencyObjectHelper.FindChildByName``1(System.Windows.DependencyObject,System.String)">
+            <summary>
+            Finds a Child of a given item in the visual tree. 
+            </summary>
+            <param name="parent">A direct parent of the queried item.</param>
+            <typeparam name="TDependencyObject">The type of the queried item.</typeparam>
+            <param name="childName">x:Name or Name of child. </param>
+            <returns>The first parent item that matches the submitted type parameter. 
+            If not matching item can be found, 
+            a null parent is being returned.</returns>
+        </member>
+        <member name="T:GetcuReone.MvvmFrame.Wpf.TestAdapter.Helpers.FrameworkElementHelper">
+            <summary>
+            FrameworkElement helper
+            </summary>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Helpers.FrameworkElementHelper.WaitLoadAsync(System.Windows.FrameworkElement)">
+            <summary>
+            Asynchronously waiting for an item to load
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GetcuReone.MvvmFrame.Wpf.TestAdapter.Helpers.ThreadHelper">
+            <summary>
+            thread helper
+            </summary>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Helpers.ThreadHelper.RunActinInSTAThread(System.Action,System.Int32)">
+            <summary>
+            Run an action in a STA thread
+            </summary>
+            <param name="threadStart"></param>
+            <param name="maxWaitTime"></param>
+        </member>
+        <member name="T:GetcuReone.MvvmFrame.Wpf.TestAdapter.MockedViewModelTestBase`1">
+            <summary>
+            Base class for tests with mocked view-models
+            </summary>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.MockedViewModelTestBase`1.SetupMock(Moq.Mock{`0})">
+            <summary>
+            Setup mock for instance <typeparamref name="TViewModel"/>
+            </summary>
+            <param name="mock"></param>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.MockedViewModelTestBase`1.CreateMockedViewModel(System.Windows.Controls.Frame,Moq.MockBehavior,GetcuReone.MvvmFrame.Interfaces.IModelOptions,GetcuReone.MvvmFrame.Wpf.Interfaces.IConfigUiServices)">
+            <summary>
+            Create mocked view-model
+            </summary>
+            <param name="frame"></param>
+            <param name="behavior">behavior of the mock</param>
+            <param name="modelOptions"></param>
+            <param name="configUiServices"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GetcuReone.MvvmFrame.Wpf.TestAdapter.TestBase">
+            <summary>
+            Class base for test
+            </summary>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.TestBase.ExpectedException``1(System.Action)">
+            <summary>
+            Method expects error from <paramref name="action"/>
+            </summary>
+            <typeparam name="TException">type exception</typeparam>
+            <param name="action">action</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
