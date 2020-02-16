@@ -119,7 +119,7 @@ namespace GetcuReone.MvvmFrame.Wpf.TestAdapter
         /// Thank you very much https://www.meziantou.net/unit-tests-with-a-wpf-window.htm
         /// </remarks>
         [TestCleanup]
-        public virtual void CleanUp()
+        public virtual void Cleanup()
         {
             Dispatcher.CurrentDispatcher.InvokeShutdown();
         }
