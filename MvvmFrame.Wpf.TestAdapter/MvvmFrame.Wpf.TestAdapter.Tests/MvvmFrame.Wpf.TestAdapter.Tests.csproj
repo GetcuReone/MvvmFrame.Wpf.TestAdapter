@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Helper\Env\PageTest.xaml" />
     <None Remove="Run\Env\PageTest.xaml" />
     <None Remove="TestWindow.xaml" />
   </ItemGroup>
@@ -18,6 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Include="Helper\Env\PageTest.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Run\Env\PageTest.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -28,6 +32,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MvvmFrame.Wpf.TestAdapter\MvvmFrame.Wpf.TestAdapter.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms" />
   </ItemGroup>
 
 </Project>
