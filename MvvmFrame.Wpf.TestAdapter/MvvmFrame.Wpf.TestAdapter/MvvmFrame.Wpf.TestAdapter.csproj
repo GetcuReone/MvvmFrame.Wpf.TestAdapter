@@ -4,6 +4,8 @@
     <TargetFramework>net472</TargetFramework>
     <DocumentationFile>MvvmFrame.Wpf.TestAdapter.xml</DocumentationFile>
     <RootNamespace>GetcuReone.MvvmFrame.Wpf.TestAdapter</RootNamespace>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
     
     <Authors>GetcuReone</Authors>
     <PackageId>MvvmFrameWpf.TestAdapter</PackageId>
