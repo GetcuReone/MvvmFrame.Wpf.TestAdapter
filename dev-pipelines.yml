@@ -5,12 +5,12 @@ pool:
   vmImage: 'windows-2019'
 
 variables:
-  solutionName: 'MvvmFrame'
+  solutionName: 'MvvmFrame.Wpf.TestAdapter'
   solution: '**/$(solutionName).sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Debug'
   packageVersion: '1.0.0'
-  packageFileName: 'MvvmFrame.root.$(packageVersion).nupkg'
+  packageFileName: 'MvvmFrameWpf.TestAdapter.$(packageVersion).nupkg'
   nugetProjectName: 'MvvmFrame'
 
 steps:

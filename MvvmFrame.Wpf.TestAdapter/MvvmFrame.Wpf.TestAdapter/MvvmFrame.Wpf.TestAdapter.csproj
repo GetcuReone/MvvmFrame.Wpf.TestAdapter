@@ -1,90 +1,54 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5940CD3E-C390-4E56-99B5-7390D68B0B3B}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MvvmFrame.Wpf.TestAdapter</RootNamespace>
-    <AssemblyName>MvvmFrame.Wpf.TestAdapter</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">15.0</VisualStudioVersion>
-    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
-    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
-    <IsCodedUITest>False</IsCodedUITest>
-    <TestProjectType>UnitTest</TestProjectType>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <TargetFramework>net472</TargetFramework>
+    <DocumentationFile>MvvmFrame.Wpf.TestAdapter.xml</DocumentationFile>
+    <RootNamespace>GetcuReone.MvvmFrame.Wpf.TestAdapter</RootNamespace>
+    
+    <Authors>GetcuReone</Authors>
+    <PackageId>MvvmFrameWpf.TestAdapter</PackageId>
+    <Product>MvvmFrameWpf.TestAdapter</Product>
+    <Description>This library is designed to simplify testing applications created using the library MvvmFrame.Wpf</Description>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/GetcuReone/MvvmFrame.Wpf.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageProjectUrl>https://github.com/GetcuReone/MvvmFrame.Wpf.TestAdapter/wiki</PackageProjectUrl>
+    <PackageTags>wpf frame mvvm mvvmframe testadapter getcureone combopatterns tests test</PackageTags>
+    <PackageReleaseNotes>Restructuring</PackageReleaseNotes>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Copyright>Copyright © 2019 GetcuReone</Copyright>
+    <NeutralLanguage>en-US</NeutralLanguage>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\MvvmFrame.Wpf.TestAdapter.xml</DocumentationFile>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\MvvmFrame.Wpf.TestAdapter.xml</DocumentationFile>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>GetcuReone.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>..\GetcuReone.snk</AssemblyOriginatorKeyFile>
+    <DelaySign>false</DelaySign>
+    <AssemblyVersion>$(majorVersion).0.0.0</AssemblyVersion>
+    <FileVersion>$(majorVersion).0.0.0</FileVersion>
   </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="PresentationCore" />
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
+    <None Include="..\..\LICENSE-2.0.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\..\dev-pipelines.yml" />
+    <None Include="..\..\master-pipelines.yml" />
+    <None Include="..\..\release-pipelines.yml" />
+    <None Include="..\..\pipeline_steps\step_restore_build_pack.yml" Link="pipline_steps\step_restore_build_pack.yml" />
+    <None Include="..\..\pipeline_steps\step_run_all_tests.yml" Link="pipline_steps\step_run_all_tests.yml" />
+    <None Include="..\..\pipeline_steps\step_install_snk.yml" Link="pipline_steps\step_install_snk.yml" />
+    <None Include="..\..\pipeline_steps\step_copy_nuget_to_artifacts.yml" Link="pipline_steps\step_copy_nuget_to_artifacts.yml" />
   </ItemGroup>
+
   <ItemGroup>
-    <Compile Include="Entities\AsyncBlockBase.cs" />
-    <Compile Include="Entities\BlockBase.cs" />
-    <Compile Include="Entities\GivenBlock.cs" />
-    <Compile Include="Entities\GivenAsyncBlock.cs" />
-    <Compile Include="Entities\ThenBlock.cs" />
-    <Compile Include="Entities\ThenAsyncBlock.cs" />
-    <Compile Include="Entities\WhenBlock.cs" />
-    <Compile Include="Entities\WhenAsyncBlock.cs" />
-    <Compile Include="FrameTestBase.cs" />
-    <Compile Include="Helpers\ButtonHelper.cs" />
-    <Compile Include="Helpers\DependencyObjectHelper.cs" />
-    <Compile Include="Helpers\FrameworkElementHelper.cs" />
-    <Compile Include="Helpers\GivenWhenThenHelper.cs" />
-    <Compile Include="Helpers\LoggingHelper.cs" />
-    <Compile Include="MockedViewModelTestBase.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <PackageReference Include="MvvmFrame.root" Version="6.0.0" />
+    <PackageReference Include="PresentationFramework" Version="4.6.0" />
+    <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.3" />
   </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Moq">
-      <Version>4.13.1</Version>
-    </PackageReference>
-    <PackageReference Include="MSTest.TestFramework">
-      <Version>2.0.0</Version>
-    </PackageReference>
-    <PackageReference Include="MvvmFrameWpf">
-      <Version>5.1.2</Version>
-    </PackageReference>
-    <PackageReference Include="PresentationFramework">
-      <Version>4.6.0</Version>
-    </PackageReference>
-    <PackageReference Include="System.Threading.Tasks.Extensions">
-      <Version>4.5.3</Version>
-    </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="GetcuReone.snk" />
-    <None Include=".nuspec" />
-  </ItemGroup>
-  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
