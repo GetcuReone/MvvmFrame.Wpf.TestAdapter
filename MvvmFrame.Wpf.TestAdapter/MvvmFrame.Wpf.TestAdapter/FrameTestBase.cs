@@ -11,7 +11,7 @@ namespace GetcuReone.MvvmFrame.Wpf.TestAdapter
     /// base class for testing pages written on the MvvmFrame.Wpf
     /// </summary>
     [TestClass]
-    public abstract class FrameTestBase
+    public abstract class FrameTestBase : TestBase
     {
         private Frame _frame;
 
