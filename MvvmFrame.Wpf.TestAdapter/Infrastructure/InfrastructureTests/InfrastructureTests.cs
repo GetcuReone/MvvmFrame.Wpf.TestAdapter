@@ -29,7 +29,7 @@ namespace InfrastructureTests
 
         [TestMethod]
         [TestCategory(TC.Projects.Infrastructure)]
-        [Description("[infrastructure] Checking the presence of all the necessary files in the nugget package")]
+        [Description("Checking the presence of all the necessary files in the nugget package")]
         [Timeout(Timeouts.Minute.One)]
         public void NugetHaveNeedFilesTestCase()
         {
@@ -77,7 +77,7 @@ namespace InfrastructureTests
         
         [TestMethod]
         [TestCategory(TC.Projects.Infrastructure)]
-        [Description("[infrastructure] Check for all attribute Timeout tests")]
+        [Description("Check for all attribute Timeout tests")]
         [Timeout(Timeouts.Minute.One)]
         [Ignore("The reason for the test fall is revealed")]
         public void AllHaveTimeoutTestCase()
@@ -131,7 +131,7 @@ namespace InfrastructureTests
         
         [TestMethod]
         [TestCategory(TC.Projects.Infrastructure)]
-        [Description("[infrastructure] all namespaces start with GetcuReone.ComboPatterns")]
+        [Description("all namespaces start with GetcuReone.ComboPatterns")]
         [Timeout(Timeouts.Minute.One)]
         [Ignore("The reason for the test fall is revealed")]
         public void AllNamespacesStartWithGetcuReoneTestCase()
@@ -187,7 +187,7 @@ namespace InfrastructureTests
         
         [TestMethod]
         [TestCategory(TC.Projects.Infrastructure)]
-        [Description("[infrastructure] assemblies have major version")]
+        [Description("assemblies have major version")]
         [Timeout(Timeouts.Minute.One)]
         [Ignore("The reason for the test fall is revealed")]
         public void AssembliesHaveMajorVersionTestCase()
