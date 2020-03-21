@@ -10,7 +10,7 @@ variables:
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
   majorVersion: '2'
-  minorVersion: '1'
+  minorVersion: '2'
   patchVersion: '0'
   packageVersion: '$(majorVersion).$(minorVersion).$(patchVersion)'
   nugetProjectName: 'MvvmFrame.Wpf.TestAdapter'

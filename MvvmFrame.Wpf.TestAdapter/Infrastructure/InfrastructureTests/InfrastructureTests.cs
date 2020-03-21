@@ -1,5 +1,5 @@
-using JwtTestAdapter;
-using JwtTestAdapter.Helpers;
+using GetcuReone.GwtTestFramework;
+using GetcuReone.GwtTestFramework.Helpers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -7,6 +7,7 @@ using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Reflection;
+using TestCommon;
 
 namespace InfrastructureTests
 {
@@ -14,7 +15,7 @@ namespace InfrastructureTests
     public class InfrastructureTests : TestBase
     {
         private string _buildConfiguration;
-        private readonly DirectoryInfo _solutionFolder = new DirectoryInfo(Environment.CurrentDirectory).Parent.Parent.Parent.Parent.Parent;
+        private DirectoryInfo _solutionFolder;
 
         [TestInitialize]
         public void Initialize()
@@ -22,11 +23,14 @@ namespace InfrastructureTests
             _buildConfiguration = Environment.GetEnvironmentVariable("buildConfiguration");
             if (string.IsNullOrEmpty(_buildConfiguration))
                 _buildConfiguration = "Debug";
+
+            _solutionFolder = new DirectoryInfo(Environment.CurrentDirectory).Parent.Parent.Parent.Parent.Parent;
         }
 
-        [Timeout(Timeouts.Minute.One)]
         [TestMethod]
+        [TestCategory(TC.Projects.Infrastructure)]
         [Description("[infrastructure] Checking the presence of all the necessary files in the nugget package")]
+        [Timeout(Timeouts.Minute.One)]
         public void NugetHaveNeedFilesTestCase()
         {
             Given("Get folder with .nupkg", () =>
@@ -70,9 +74,11 @@ namespace InfrastructureTests
                 });
         }
 
-        [Timeout(Timeouts.Minute.One)]
+        
         [TestMethod]
+        [TestCategory(TC.Projects.Infrastructure)]
         [Description("[infrastructure] Check for all attribute Timeout tests")]
+        [Timeout(Timeouts.Minute.One)]
         [Ignore("The reason for the test fall is revealed")]
         public void AllHaveTimeoutTestCase()
         {
@@ -91,7 +97,7 @@ namespace InfrastructureTests
                 .And("Get assembly infos", files => 
                     files.Select(file => 
                     {
-                        LoggingHelper.Info($"test assembly {file.FullName}");
+                        LoggingHelper.ConsoleInfo($"test assembly {file.FullName}");
                         return Assembly.LoadFrom(file.FullName);
                     }).ToList())
                 .And("Get types", assemblies => assemblies.SelectMany(assembly => assembly.GetTypes()))
@@ -105,7 +111,7 @@ namespace InfrastructureTests
                         foreach (var method in cl.GetMethods().Where(method => method.GetCustomAttribute(typeof(TestMethodAttribute)) != null))
                         {
                             result.Add(method);
-                            LoggingHelper.Info($"test method {cl.FullName}.{method.Name}()");
+                            LoggingHelper.ConsoleInfo($"test method {cl.FullName}.{method.Name}()");
                         }
                     }
 
@@ -122,9 +128,11 @@ namespace InfrastructureTests
                 });
         }
 
-        [Timeout(Timeouts.Minute.One)]
+        
         [TestMethod]
+        [TestCategory(TC.Projects.Infrastructure)]
         [Description("[infrastructure] all namespaces start with GetcuReone.ComboPatterns")]
+        [Timeout(Timeouts.Minute.One)]
         [Ignore("The reason for the test fall is revealed")]
         public void AllNamespacesStartWithGetcuReoneTestCase()
         {
@@ -152,7 +160,7 @@ namespace InfrastructureTests
                     files =>
                         files.Select(file =>
                         {
-                            LoggingHelper.Info($"test assembly {file.FullName}");
+                            LoggingHelper.ConsoleInfo($"test assembly {file.FullName}");
                             return Assembly.LoadFrom(file.FullName);
                         }).ToList())
 
@@ -176,9 +184,11 @@ namespace InfrastructureTests
                 });
         }
 
-        [Timeout(Timeouts.Minute.One)]
+        
         [TestMethod]
+        [TestCategory(TC.Projects.Infrastructure)]
         [Description("[infrastructure] assemblies have major version")]
+        [Timeout(Timeouts.Minute.One)]
         [Ignore("The reason for the test fall is revealed")]
         public void AssembliesHaveMajorVersionTestCase()
         {
@@ -209,7 +219,7 @@ namespace InfrastructureTests
                     files =>
                         files.Select(file =>
                         {
-                            LoggingHelper.Info($"test assembly {file.FullName}");
+                            LoggingHelper.ConsoleInfo($"test assembly {file.FullName}");
                             return Assembly.LoadFrom(file.FullName);
                         }).ToList())
                 .Then("Checke assembly version", assemblies =>

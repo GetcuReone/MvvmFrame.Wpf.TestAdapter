@@ -16,7 +16,8 @@
     <PackageTags>wpf frame mvvm mvvmframe testadapter getcureone combopatterns tests test</PackageTags>
     <PackageReleaseNotes>
       Changes:
-      - Cleanup method removed. I close the application that opened the window immediately after the test</PackageReleaseNotes>
+      - Added methods for asynchronous wait.
+    </PackageReleaseNotes>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Copyright>Copyright © 2019 $(Authors)</Copyright>
     <NeutralLanguage>en-US</NeutralLanguage>
@@ -42,11 +43,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MSTest.TestFramework" Version="2.1.0" />
-    <PackageReference Include="MvvmFrame.root" Version="6.0.0" />
-    <PackageReference Include="PresentationFramework" Version="4.6.0" />
-    <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.3" />
-    <PackageReference Include="Moq" Version="4.5.0" />
-    <PackageReference Include="MvvmFrameWpf" Version="6.0.0" />
+    <PackageReference Include="MSTest.TestFramework" Version="[2.1.0,)" />
+    <PackageReference Include="MvvmFrame.root" Version="[6.0.0,)" />
+    <PackageReference Include="PresentationFramework" Version="[4.6.0,)" />
+    <PackageReference Include="System.Threading.Tasks.Extensions" Version="[4.5.3,)" />
+    <PackageReference Include="Moq" Version="[4.5.0,)" />
+    <PackageReference Include="MvvmFrameWpf" Version="[6.0.0,)" />
   </ItemGroup>
 </Project>
