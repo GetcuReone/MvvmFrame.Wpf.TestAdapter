@@ -7,8 +7,119 @@ using System.Windows.Controls;
 
 namespace GetcuReone.MvvmFrame.Wpf.TestAdapter.Helpers
 {
-    internal static class GivenWhenThenHelper
+    /// <summary>
+    /// Helper for tests.
+    /// </summary>
+    public static class GivenWhenThenHelper
     {
+        /// <summary>
+        /// Asynchronous wait.
+        /// </summary>
+        /// <typeparam name="TIn"></typeparam>
+        /// <typeparam name="TOut"></typeparam>
+        /// <param name="givenBlock"></param>
+        /// <param name="timeout"></param>
+        /// <returns></returns>
+        public static GivenAsyncBlock<TOut, TOut> AndWait<TIn, TOut>(this GivenBlock<TIn, TOut> givenBlock, int timeout)
+        {
+            return givenBlock.AndAsync($"Wait {timeout} miliseconds.", async param =>
+            {
+                int innerTimeout = timeout;
+                await Task.Delay(innerTimeout);
+                return param;
+            });
+        }
+
+        /// <summary>
+        /// Asynchronous wait.
+        /// </summary>
+        /// <typeparam name="TIn"></typeparam>
+        /// <typeparam name="TOut"></typeparam>
+        /// <param name="givenBlock"></param>
+        /// <param name="timeout"></param>
+        /// <returns></returns>
+        public static GivenAsyncBlock<TOut, TOut> AndWait<TIn, TOut>(this GivenAsyncBlock<TIn, TOut> givenBlock, int timeout)
+        {
+            return givenBlock.AndAsync($"Wait {timeout} miliseconds.", async param =>
+            {
+                int innerTimeout = timeout;
+                await Task.Delay(innerTimeout);
+                return param;
+            });
+        }
+
+        /// <summary>
+        /// Asynchronous wait.
+        /// </summary>
+        /// <typeparam name="TIn"></typeparam>
+        /// <typeparam name="TOut"></typeparam>
+        /// <param name="whenBlock"></param>
+        /// <param name="timeout"></param>
+        /// <returns></returns>
+        public static ThenAsyncBlock<TOut, TOut> ThenWait<TIn, TOut>(this WhenBlock<TIn, TOut> whenBlock, int timeout)
+        {
+            return whenBlock.ThenAsync($"Wait {timeout} miliseconds.", async param =>
+            {
+                int innerTimeout = timeout;
+                await Task.Delay(innerTimeout);
+                return param;
+            });
+        }
+
+        /// <summary>
+        /// Asynchronous wait.
+        /// </summary>
+        /// <typeparam name="TIn"></typeparam>
+        /// <typeparam name="TOut"></typeparam>
+        /// <param name="whenBlock"></param>
+        /// <param name="timeout"></param>
+        /// <returns></returns>
+        public static ThenAsyncBlock<TOut, TOut> ThenWait<TIn, TOut>(this WhenAsyncBlock<TIn, TOut> whenBlock, int timeout)
+        {
+            return whenBlock.ThenAsync($"Wait {timeout} miliseconds.", async param =>
+            {
+                int innerTimeout = timeout;
+                await Task.Delay(innerTimeout);
+                return param;
+            });
+        }
+
+        /// <summary>
+        /// Asynchronous wait.
+        /// </summary>
+        /// <typeparam name="TIn"></typeparam>
+        /// <typeparam name="TOut"></typeparam>
+        /// <param name="thenBlock"></param>
+        /// <param name="timeout"></param>
+        /// <returns></returns>
+        public static ThenAsyncBlock<TOut, TOut> AndWait<TIn, TOut>(this ThenBlock<TIn, TOut> thenBlock, int timeout)
+        {
+            return thenBlock.AndAsync($"Wait {timeout} miliseconds.", async param =>
+            {
+                int innerTimeout = timeout;
+                await Task.Delay(innerTimeout);
+                return param;
+            });
+        }
+
+        /// <summary>
+        /// Asynchronous wait.
+        /// </summary>
+        /// <typeparam name="TIn"></typeparam>
+        /// <typeparam name="TOut"></typeparam>
+        /// <param name="thenBlock"></param>
+        /// <param name="timeout"></param>
+        /// <returns></returns>
+        public static ThenAsyncBlock<TOut, TOut> AndWait<TIn, TOut>(this ThenAsyncBlock<TIn, TOut> thenBlock, int timeout)
+        {
+            return thenBlock.AndAsync($"Wait {timeout} miliseconds.", async param =>
+            {
+                int innerTimeout = timeout;
+                await Task.Delay(innerTimeout);
+                return param;
+            });
+        }
+
         internal static async ValueTask RunCodeBlockAndCloseWindow<TWindow>(Stack<BlockBase> blocksStack, TWindow window, Func<TWindow, Frame> getFrame)
             where TWindow : Window, new()
         {
@@ -29,6 +140,5 @@ namespace GetcuReone.MvvmFrame.Wpf.TestAdapter.Helpers
 
             window.Dispatcher.Invoke(window.Close);
         }
-
     }
 }

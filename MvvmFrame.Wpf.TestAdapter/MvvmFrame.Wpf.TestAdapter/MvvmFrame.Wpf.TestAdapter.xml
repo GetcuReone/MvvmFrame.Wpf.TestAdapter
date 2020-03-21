@@ -772,6 +772,71 @@
             <param name="element"></param>
             <returns></returns>
         </member>
+        <member name="T:GetcuReone.MvvmFrame.Wpf.TestAdapter.Helpers.GivenWhenThenHelper">
+            <summary>
+            Helper for tests.
+            </summary>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Helpers.GivenWhenThenHelper.AndWait``2(GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.GivenBlock{``0,``1},System.Int32)">
+            <summary>
+            Asynchronous wait.
+            </summary>
+            <typeparam name="TIn"></typeparam>
+            <typeparam name="TOut"></typeparam>
+            <param name="givenBlock"></param>
+            <param name="timeout"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Helpers.GivenWhenThenHelper.AndWait``2(GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.GivenAsyncBlock{``0,``1},System.Int32)">
+            <summary>
+            Asynchronous wait.
+            </summary>
+            <typeparam name="TIn"></typeparam>
+            <typeparam name="TOut"></typeparam>
+            <param name="givenBlock"></param>
+            <param name="timeout"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Helpers.GivenWhenThenHelper.ThenWait``2(GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.WhenBlock{``0,``1},System.Int32)">
+            <summary>
+            Asynchronous wait.
+            </summary>
+            <typeparam name="TIn"></typeparam>
+            <typeparam name="TOut"></typeparam>
+            <param name="whenBlock"></param>
+            <param name="timeout"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Helpers.GivenWhenThenHelper.ThenWait``2(GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.WhenAsyncBlock{``0,``1},System.Int32)">
+            <summary>
+            Asynchronous wait.
+            </summary>
+            <typeparam name="TIn"></typeparam>
+            <typeparam name="TOut"></typeparam>
+            <param name="whenBlock"></param>
+            <param name="timeout"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Helpers.GivenWhenThenHelper.AndWait``2(GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.ThenBlock{``0,``1},System.Int32)">
+            <summary>
+            Asynchronous wait.
+            </summary>
+            <typeparam name="TIn"></typeparam>
+            <typeparam name="TOut"></typeparam>
+            <param name="thenBlock"></param>
+            <param name="timeout"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Helpers.GivenWhenThenHelper.AndWait``2(GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.ThenAsyncBlock{``0,``1},System.Int32)">
+            <summary>
+            Asynchronous wait.
+            </summary>
+            <typeparam name="TIn"></typeparam>
+            <typeparam name="TOut"></typeparam>
+            <param name="thenBlock"></param>
+            <param name="timeout"></param>
+            <returns></returns>
+        </member>
         <member name="T:GetcuReone.MvvmFrame.Wpf.TestAdapter.Helpers.ThreadHelper">
             <summary>
             thread helper

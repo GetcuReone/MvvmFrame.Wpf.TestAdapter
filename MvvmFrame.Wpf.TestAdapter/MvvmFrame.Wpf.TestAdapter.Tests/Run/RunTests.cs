@@ -1,9 +1,9 @@
 ﻿using GetcuReone.MvvmFrame.Wpf;
 using GetcuReone.MvvmFrame.Wpf.Entities;
 using GetcuReone.MvvmFrame.Wpf.TestAdapter;
+using GetcuReone.MvvmFrame.Wpf.TestAdapter.Helpers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MvvmFrame.Wpf.TestAdapter.Tests.Run.Env;
-using System.Threading.Tasks;
 using System.Windows.Controls;
 
 namespace MvvmFrame.Wpf.TestAdapter.Tests.Run
@@ -43,15 +43,17 @@ namespace MvvmFrame.Wpf.TestAdapter.Tests.Run
                 frame = f;
                 return ViewModelBase.CreateViewModel<ViewModelTest>(f);
             })
-                .WhenAsync("Navigate page", async viewModel =>
+                .When("Navigate page", viewModel =>
                 {
                     NavigateResult<ViewModelBase> result = ViewModelBase.Navigate<PageTest>(viewModel);
+
                     if (!result.IsNavigate)
                         Assert.Fail("Navigation attempt failed");
-                    await Task.Delay(Timeouts.OneSecond);
+
                     return result.ViewModel;
                 })
-                .Then("Check page", viewModel =>
+                .ThenWait(Timeouts.OneSecond)
+                .And("Check page", viewModel =>
                 {
                     var page = CheckTypeAndGetPage<PageTest>();
                     Assert.AreEqual(frame.NavigationService.Content, page, "Pages do not match");
