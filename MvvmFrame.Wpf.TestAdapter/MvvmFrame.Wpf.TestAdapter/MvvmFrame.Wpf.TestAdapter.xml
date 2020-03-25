@@ -721,6 +721,14 @@
             <param name="givenBlock"></param>
             <returns></returns>
         </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.FrameTestBase.Cleanup">
+            <summary>
+            Clean up
+            </summary>
+            <remarks>
+            Thank you very much https://www.meziantou.net/unit-tests-with-a-wpf-window.htm
+            </remarks>
+        </member>
         <member name="T:GetcuReone.MvvmFrame.Wpf.TestAdapter.Helpers.ButtonHelper">
             <summary>
             Helper for <see cref="T:System.Windows.Controls.Button"/>
