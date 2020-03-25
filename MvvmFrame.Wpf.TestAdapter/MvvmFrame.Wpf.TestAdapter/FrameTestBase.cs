@@ -25,11 +25,11 @@ namespace GetcuReone.MvvmFrame.Wpf.TestAdapter
             if (_frame?.NavigationService == null)
                 Assert.Fail("frame or frame.NavigationService should not be (maybe you did not use the block given)");
             else if (!(_frame.NavigationService.Content is Page))
-                Assert.Fail("frame.NavigationService.Content not contains Page");
+                Assert.Fail($"frame.NavigationService.Content not contains Page");
             else if (_frame.NavigationService.Content is TPage page)
                 return page;
 
-            Assert.Fail("_frame.NavigationService.Content contains other page");
+            Assert.Fail($"_frame.NavigationService.Content not contains {typeof(TPage).Name}");
             return null;
 
         }
@@ -110,6 +110,18 @@ namespace GetcuReone.MvvmFrame.Wpf.TestAdapter
                     return null;
                 },
             };
+        }
+
+        /// <summary>
+        /// Clean up
+        /// </summary>
+        /// <remarks>
+        /// Thank you very much https://www.meziantou.net/unit-tests-with-a-wpf-window.htm
+        /// </remarks>
+        [TestCleanup]
+        public virtual void Cleanup()
+        {
+            Dispatcher.CurrentDispatcher.InvokeShutdown();
         }
     }
 }

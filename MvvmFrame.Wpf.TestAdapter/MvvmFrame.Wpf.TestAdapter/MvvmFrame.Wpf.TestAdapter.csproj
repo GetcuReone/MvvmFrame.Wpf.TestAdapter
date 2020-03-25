@@ -16,7 +16,7 @@
     <PackageTags>wpf frame mvvm mvvmframe testadapter getcureone combopatterns tests test</PackageTags>
     <PackageReleaseNotes>
       Changes:
-      - Added methods for asynchronous wait.
+      - Restore Cleanup method.
     </PackageReleaseNotes>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Copyright>Copyright © 2019 $(Authors)</Copyright>
