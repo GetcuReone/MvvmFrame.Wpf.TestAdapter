@@ -23,13 +23,13 @@ namespace GetcuReone.MvvmFrame.Wpf.TestAdapter
         protected virtual TPage CheckTypeAndGetPage<TPage>() where TPage: Page
         {
             if (_frame?.NavigationService == null)
-                Assert.Fail("frame or frame.NavigationService should not be (maybe you did not use the block given)");
+                Assert.Fail("frame or frame.NavigationService should not be (maybe you did not use the block given).");
             else if (!(_frame.NavigationService.Content is Page))
-                Assert.Fail($"frame.NavigationService.Content not contains Page");
+                Assert.Fail($"frame.NavigationService.Content not contains Page. Contain <{_frame.NavigationService.Content.GetType().Name}>");
             else if (_frame.NavigationService.Content is TPage page)
                 return page;
 
-            Assert.Fail($"_frame.NavigationService.Content not contains {typeof(TPage).Name}");
+            Assert.Fail($"_frame.NavigationService.Content contain not expected content. Expected <{typeof(TPage).Name}> Actual <{_frame.NavigationService.Content.GetType().Name}>.");
             return null;
 
         }
@@ -121,7 +121,8 @@ namespace GetcuReone.MvvmFrame.Wpf.TestAdapter
         [TestCleanup]
         public virtual void Cleanup()
         {
-            Dispatcher.CurrentDispatcher.InvokeShutdown();
+            if (!Dispatcher.CurrentDispatcher.HasShutdownStarted)
+                Dispatcher.CurrentDispatcher.InvokeShutdown();
         }
     }
 }
