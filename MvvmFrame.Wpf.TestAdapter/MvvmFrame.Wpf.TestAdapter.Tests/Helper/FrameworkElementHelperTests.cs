@@ -5,6 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MvvmFrame.Wpf.TestAdapter.Tests.Helper.Env;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using TestCommon;
 
 namespace MvvmFrame.Wpf.TestAdapter.Tests.Helper
 {
@@ -12,7 +13,8 @@ namespace MvvmFrame.Wpf.TestAdapter.Tests.Helper
     public sealed class FrameworkElementHelperTests : HelperTestsBase
     {
         [TestMethod]
-        [Description("[framework_element] check method WaitLoadAsync")]
+        [TestCategory(TC.FrameworkElement), TestCategory(GetcuReoneTC.Unit)]
+        [Description("Check method WaitLoadAsync.")]
         [Timeout(Timeouts.Second.Five)]
         public void WaitLoadAsyncTestCase()
         {

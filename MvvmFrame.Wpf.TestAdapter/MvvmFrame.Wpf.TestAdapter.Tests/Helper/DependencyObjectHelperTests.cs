@@ -1,9 +1,11 @@
-﻿using GetcuReone.MvvmFrame.Wpf;
+﻿using GetcuReone.GetcuTestAdapter;
+using GetcuReone.MvvmFrame.Wpf;
 using GetcuReone.MvvmFrame.Wpf.TestAdapter.Helpers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MvvmFrame.Wpf.TestAdapter.Tests.Helper.Env;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using TestCommon;
 
 namespace MvvmFrame.Wpf.TestAdapter.Tests.Helper
 {
@@ -11,8 +13,9 @@ namespace MvvmFrame.Wpf.TestAdapter.Tests.Helper
     public sealed class DependencyObjectHelperTests : HelperTestsBase
     {
         [TestMethod]
-        [Description("[dependency_object] check method FindParentByType")]
-        [Timeout(Timeouts.FiveSecond)]
+        [TestCategory(TC.FrameworkElement), TestCategory(GetcuReoneTC.Unit)]
+        [Description("Check method FindParentByType.")]
+        [Timeout(Timeouts.Second.Five)]
         public void FindParentByTypeTestCase()
         {
             Frame mainFrame = null;
@@ -27,25 +30,26 @@ namespace MvvmFrame.Wpf.TestAdapter.Tests.Helper
                     var nResult = ViewModelBase.Navigate<PageTest>(viewModel);
                     Assert.IsTrue(nResult.IsNavigate, "navigate not runed");
 
-                    await Task.Delay(Timeouts.OneSecond);
+                    await Task.Delay(Timeouts.Second.One);
                     var page = CheckTypeAndGetPage<PageTest>();
                     await page.WaitLoadAsync();
                     return page;
                 })
                 .When("Get frame", page => page.FindParentByType<Frame>())
                 .Then("Check result", frame => Assert.AreEqual(mainFrame, frame, "frames must be mutch"))
-                .RunTestWindow(Timeouts.FiveSecond);
+                .RunTestWindow(Timeouts.Second.One);
         }
 
         [TestMethod]
-        [Description("[dependency_object] check method FindChildByName")]
-        [Timeout(Timeouts.FiveSecond)]
+        [TestCategory(TC.FrameworkElement), TestCategory(GetcuReoneTC.Unit)]
+        [Description("Check method FindChildByName.")]
+        [Timeout(Timeouts.Second.Five)]
         public void FindChildByNameTestCase()
         {
             GivenNavigatePage()
                 .When("Get frame", page => page.FindChildByName<Button>("btn"))
                 .Then("Check result", button => Assert.AreEqual(CheckTypeAndGetPage<PageTest>().btn, button, "buttons must be mutch"))
-                .RunTestWindow(Timeouts.FiveSecond);
+                .RunTestWindow(Timeouts.Second.Five);
         }
     }
 }
