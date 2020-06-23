@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvvmFrame.Wpf.TestAdapter",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{56135299-9AA7-4CCA-A94C-A91B3B94E73D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pipelines", "Infrastructure\Pipelines\Pipelines.csproj", "{C360F310-129C-46A5-9A69-6C2882471AA6}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvvmFrame.Wpf.TestAdapter.Tests", "MvvmFrame.Wpf.TestAdapter.Tests\MvvmFrame.Wpf.TestAdapter.Tests.csproj", "{62B05A7C-676A-4DF7-8E68-0CACBB21880F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InfrastructureTests", "Infrastructure\InfrastructureTests\InfrastructureTests.csproj", "{16FD666E-B15D-4D22-A008-FF545D977641}"
@@ -25,8 +23,6 @@ Global
 		{5940CD3E-C390-4E56-99B5-7390D68B0B3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5940CD3E-C390-4E56-99B5-7390D68B0B3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5940CD3E-C390-4E56-99B5-7390D68B0B3B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C360F310-129C-46A5-9A69-6C2882471AA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C360F310-129C-46A5-9A69-6C2882471AA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62B05A7C-676A-4DF7-8E68-0CACBB21880F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{62B05A7C-676A-4DF7-8E68-0CACBB21880F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62B05A7C-676A-4DF7-8E68-0CACBB21880F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -44,7 +40,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{C360F310-129C-46A5-9A69-6C2882471AA6} = {56135299-9AA7-4CCA-A94C-A91B3B94E73D}
 		{16FD666E-B15D-4D22-A008-FF545D977641} = {56135299-9AA7-4CCA-A94C-A91B3B94E73D}
 		{7A728F40-9B6B-4293-B90A-7A3AD899FE74} = {56135299-9AA7-4CCA-A94C-A91B3B94E73D}
 	EndGlobalSection
