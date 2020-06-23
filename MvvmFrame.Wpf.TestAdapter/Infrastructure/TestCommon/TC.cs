@@ -2,10 +2,6 @@
 {
     public static class TC
     {
-        public static class Projects
-        {
-            public const string Infrastructure = "Infra";
-            public const string GwtTestAdapter = "GwtTestAdapter";
-        }
+        public const string TestBase = "test_base_class_test";
     }
 }
