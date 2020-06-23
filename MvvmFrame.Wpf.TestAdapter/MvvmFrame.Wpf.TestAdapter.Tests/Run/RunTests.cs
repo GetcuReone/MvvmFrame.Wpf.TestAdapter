@@ -1,19 +1,22 @@
-﻿using GetcuReone.MvvmFrame.Wpf;
+﻿using GetcuReone.GetcuTestAdapter;
+using GetcuReone.MvvmFrame.Wpf;
 using GetcuReone.MvvmFrame.Wpf.Entities;
 using GetcuReone.MvvmFrame.Wpf.TestAdapter;
 using GetcuReone.MvvmFrame.Wpf.TestAdapter.Helpers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MvvmFrame.Wpf.TestAdapter.Tests.Run.Env;
 using System.Windows.Controls;
+using TestCommon;
 
 namespace MvvmFrame.Wpf.TestAdapter.Tests.Run
 {
     [TestClass]
     public sealed class RunTests : FrameTestBase
     {
-        [Timeout(Timeouts.TenSecond)]
-        [Description("[Run] Check frame transmission")]
         [TestMethod]
+        [TestCategory(TC.Run), TestCategory(GetcuReoneTC.Unit)]
+        [Description("Check frame transmission.")]
+        [Timeout(Timeouts.Second.Ten)]
         public void CheckInputFrameTestCase()
         {
             Frame frame1 = null;
@@ -28,12 +31,13 @@ namespace MvvmFrame.Wpf.TestAdapter.Tests.Run
                 {
                     frame1 = window.mainFrame;
                     return window.mainFrame;
-                }, Timeouts.TenSecond);
+                }, Timeouts.Second.Ten);
         }
 
-        [Timeout(Timeouts.FiveSecond)]
-        [Description("[Run] Check method CheckTypeAndGetPage")]
         [TestMethod]
+        [TestCategory(TC.Run), TestCategory(GetcuReoneTC.Unit)]
+        [Description("Check method CheckTypeAndGetPage.")]
+        [Timeout(Timeouts.Second.Ten)]
         public void CheckTypeAndGetPageTestCase()
         {
             Frame frame = null;
@@ -52,14 +56,14 @@ namespace MvvmFrame.Wpf.TestAdapter.Tests.Run
 
                     return result.ViewModel;
                 })
-                .ThenWait(Timeouts.OneSecond)
+                .ThenWait(Timeouts.Second.One)
                 .And("Check page", viewModel =>
                 {
                     var page = CheckTypeAndGetPage<PageTest>();
                     Assert.AreEqual(frame.NavigationService.Content, page, "Pages do not match");
                     Assert.AreEqual(page.DataContext, viewModel, "DataContext is not view-model");
                 })
-                .RunTestWindow(Timeouts.FiveSecond);
+                .RunTestWindow(Timeouts.Second.Ten);
         }
     }
 }
