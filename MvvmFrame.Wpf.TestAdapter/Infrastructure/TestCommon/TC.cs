@@ -6,5 +6,6 @@
         public const string Run = "run_test";
         public const string Mock = "mock_test";
         public const string FrameworkElement = "framework_element_test";
+        public const string When = "when_test";
     }
 }
