@@ -1,9 +1,11 @@
-﻿using GetcuReone.MvvmFrame.Wpf;
+﻿using GetcuReone.GetcuTestAdapter;
+using GetcuReone.MvvmFrame.Wpf;
 using GetcuReone.MvvmFrame.Wpf.TestAdapter.Helpers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MvvmFrame.Wpf.TestAdapter.Tests.Helper.Env;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using TestCommon;
 
 namespace MvvmFrame.Wpf.TestAdapter.Tests.Helper
 {
@@ -11,8 +13,9 @@ namespace MvvmFrame.Wpf.TestAdapter.Tests.Helper
     public sealed class FrameworkElementHelperTests : HelperTestsBase
     {
         [TestMethod]
-        [Description("[framework_element] check method WaitLoadAsync")]
-        [Timeout(Timeouts.FiveSecond)]
+        [TestCategory(TC.FrameworkElement), TestCategory(GetcuReoneTC.Unit)]
+        [Description("Check method WaitLoadAsync.")]
+        [Timeout(Timeouts.Second.Five)]
         public void WaitLoadAsyncTestCase()
         {
             Frame mainFrame = null;
@@ -28,7 +31,7 @@ namespace MvvmFrame.Wpf.TestAdapter.Tests.Helper
                     Assert.IsTrue(nResult.IsNavigate, "navigate not run");
 
                     if (!(mainFrame.NavigationService.Content is PageTest))
-                        await Task.Delay(Timeouts.HundredMillisecodnds);
+                        await Task.Delay(Timeouts.Millisecond.Hundred);
                     return (PageTest)mainFrame.NavigationService.Content;
                 })
                 .WhenAsync("Wait load page", page => page.WaitLoadAsync())
@@ -37,7 +40,7 @@ namespace MvvmFrame.Wpf.TestAdapter.Tests.Helper
                     var page = CheckTypeAndGetPage<PageTest>();
                     Assert.IsTrue(page.IsLoaded, "Page not loaded");
                 })
-                .RunTestWindow(Timeouts.FiveSecond);
+                .RunTestWindow(Timeouts.Second.Five);
         }
     }
 }
