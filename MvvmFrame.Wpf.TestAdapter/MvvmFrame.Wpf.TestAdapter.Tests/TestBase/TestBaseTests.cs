@@ -11,7 +11,7 @@ namespace MvvmFrame.Wpf.TestAdapter.Tests.TestBase
         [TestMethod]
         [TestCategory(TC.TestBase), TestCategory(GetcuReoneTC.Negative), TestCategory(GetcuReoneTC.Unit)]
         [Description("Error return check.")]
-        [Timeout(Timeouts.Millisecond.Hundred)]
+        [Timeout(Timeouts.Millisecond.FiveHundred)]
         public void ErrorReturnCheckTestCase()
         {
             string message = "is error";
@@ -24,7 +24,7 @@ namespace MvvmFrame.Wpf.TestAdapter.Tests.TestBase
         [TestMethod]
         [TestCategory(TC.TestBase), TestCategory(GetcuReoneTC.Negative), TestCategory(GetcuReoneTC.Unit)]
         [Description("Return another error.")]
-        [Timeout(Timeouts.Millisecond.Hundred)]
+        [Timeout(Timeouts.Millisecond.FiveHundred)]
         public void ReturnAnotherErrorTestCase()
         {
             try
@@ -43,7 +43,7 @@ namespace MvvmFrame.Wpf.TestAdapter.Tests.TestBase
         [TestMethod]
         [TestCategory(TC.TestBase), TestCategory(GetcuReoneTC.Negative), TestCategory(GetcuReoneTC.Unit)]
         [Description("Method worked without errors.")]
-        [Timeout(Timeouts.Millisecond.Hundred)]
+        [Timeout(Timeouts.Millisecond.FiveHundred)]
         public void MethodWorkedWithoutErrorsTestCase()
         {
             string message = "Assert.Fail failed. The method worked without errors";
