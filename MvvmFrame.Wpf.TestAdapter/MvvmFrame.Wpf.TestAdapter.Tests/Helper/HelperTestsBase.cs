@@ -1,4 +1,5 @@
-﻿using GetcuReone.MvvmFrame.Wpf;
+﻿using GetcuReone.GetcuTestAdapter;
+using GetcuReone.MvvmFrame.Wpf;
 using GetcuReone.MvvmFrame.Wpf.TestAdapter;
 using GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities;
 using GetcuReone.MvvmFrame.Wpf.TestAdapter.Helpers;
@@ -19,7 +20,7 @@ namespace MvvmFrame.Wpf.TestAdapter.Tests.Helper
                     var nResult = ViewModelBase.Navigate<PageTest>(viewModel);
                     Assert.IsTrue(nResult.IsNavigate, "navigate not runed");
 
-                    await Task.Delay(Timeouts.OneSecond);
+                    await Task.Delay(Timeouts.Second.One);
                     var page = CheckTypeAndGetPage<PageTest>();
                     await page.WaitLoadAsync();
                     return page;
