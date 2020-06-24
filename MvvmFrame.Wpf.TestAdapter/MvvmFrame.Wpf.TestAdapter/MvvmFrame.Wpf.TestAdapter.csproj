@@ -4,6 +4,8 @@
     <TargetFramework>net472</TargetFramework>
     <DocumentationFile>MvvmFrame.Wpf.TestAdapter.xml</DocumentationFile>
     <RootNamespace>GetcuReone.MvvmFrame.Wpf.TestAdapter</RootNamespace>
+
+    <GitIssuesUrl>https://github.com/GetcuReone/MvvmFrame.Wpf.TestAdapter/issues</GitIssuesUrl>
     
     <Authors>Itua Juel-Gaben</Authors>
     <PackageId>MvvmFrameWpf.TestAdapter</PackageId>
@@ -16,7 +18,10 @@
     <PackageTags>wpf frame mvvm mvvmframe testadapter getcureone combopatterns tests test</PackageTags>
     <PackageReleaseNotes>
       Changes:
-      - Restore Cleanup method.
+      - Added readme $(gitIssuesUrl)/4;
+      - Added empty blocks $(gitIssuesUrl)/9;
+      - Added method IsPageType $(gitIssuesUrl)/11;
+      - Added given with init view-model $(gitIssuesUrl)/19.
     </PackageReleaseNotes>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Copyright>Copyright © 2019 $(Authors)</Copyright>
