@@ -689,6 +689,29 @@
             <typeparam name="TPage"></typeparam>
             <returns></returns>
         </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.FrameTestBase.WaitNavigationPageAsync``1(System.Int32,System.Int32)">
+            <summary>
+            Asynchronously waiting for a page to load.
+            </summary>
+            <typeparam name="TPage"></typeparam>
+            <param name="step">Verification interval.</param>
+            <param name="timeout">Maximum waiting time.</param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.FrameTestBase.IsPageType``1">
+            <summary>
+            True - if the main frame contains a page of <typeparamref name="TPage"/> type.
+            </summary>
+            <typeparam name="TPage"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.FrameTestBase.GivenInitViewModel``1">
+            <summary>
+            Given block with create view-model.
+            </summary>
+            <typeparam name="TViewModel"></typeparam>
+            <returns></returns>
+        </member>
         <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.FrameTestBase.Given``1(System.String,System.Func{System.Windows.Controls.Frame,``0})">
             <summary>
             Block given
@@ -845,6 +868,42 @@
             <param name="timeout"></param>
             <returns></returns>
         </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Helpers.GivenWhenThenHelper.WhenEmpty``2(GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.GivenBlock{``0,``1})">
+            <summary>
+            Empty when block.
+            </summary>
+            <typeparam name="TIn"></typeparam>
+            <typeparam name="TOut"></typeparam>
+            <param name="givenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Helpers.GivenWhenThenHelper.WhenEmpty``2(GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.GivenAsyncBlock{``0,``1})">
+            <summary>
+            Empty when block.
+            </summary>
+            <typeparam name="TIn"></typeparam>
+            <typeparam name="TOut"></typeparam>
+            <param name="givenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Helpers.GivenWhenThenHelper.ThenEmpty``2(GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.WhenBlock{``0,``1})">
+            <summary>
+            Empty when block.
+            </summary>
+            <typeparam name="TIn"></typeparam>
+            <typeparam name="TOut"></typeparam>
+            <param name="whenBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.Helpers.GivenWhenThenHelper.ThenEmpty``2(GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities.WhenAsyncBlock{``0,``1})">
+            <summary>
+            Empty when block.
+            </summary>
+            <typeparam name="TIn"></typeparam>
+            <typeparam name="TOut"></typeparam>
+            <param name="whenBlock"></param>
+            <returns></returns>
+        </member>
         <member name="T:GetcuReone.MvvmFrame.Wpf.TestAdapter.Helpers.ThreadHelper">
             <summary>
             thread helper
@@ -889,6 +948,14 @@
             </summary>
             <typeparam name="TException">type exception</typeparam>
             <param name="action">action</param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.MvvmFrame.Wpf.TestAdapter.TestBase.ExpectedExceptionAsync``1(System.Func{System.Threading.Tasks.ValueTask})">
+            <summary>
+            Method expects error from <paramref name="func"/>.
+            </summary>
+            <typeparam name="TException">type exception.</typeparam>
+            <param name="func">async func.</param>
             <returns></returns>
         </member>
     </members>

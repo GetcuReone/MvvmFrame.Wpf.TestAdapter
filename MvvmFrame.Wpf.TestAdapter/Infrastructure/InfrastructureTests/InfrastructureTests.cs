@@ -34,9 +34,10 @@ namespace InfrastructureTests
             string libPattern = $"lib/{TargetFramework}/" + "{0}";
             var files = new string[]
             {
-                string.Format(libPattern, "MvvmFrame.Wpf.TestAdapter.dll"),
-                string.Format(libPattern, "MvvmFrame.Wpf.TestAdapter.xml"),
+                string.Format(libPattern, $"{_projectName}.dll"),
+                string.Format(libPattern, $"{_projectName}.xml"),
                 "LICENSE-2.0.txt",
+                "README.md",
             };
 
             VerifyNugetContainsFiles(_solutionFolder, nugetId, files.Length + 4, files);
