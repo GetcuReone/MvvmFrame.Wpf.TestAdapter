@@ -1,8 +1,10 @@
-﻿using GetcuReone.MvvmFrame.Wpf.TestAdapter;
+﻿using GetcuReone.GetcuTestAdapter;
+using GetcuReone.MvvmFrame.Wpf.TestAdapter;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using MvvmFrame.Wpf.TestAdapter.Tests.MockedViewModel.Env;
 using System;
+using TestCommon;
 
 namespace MvvmFrame.Wpf.TestAdapter.Tests.MockedViewModel
 {
@@ -18,8 +20,9 @@ namespace MvvmFrame.Wpf.TestAdapter.Tests.MockedViewModel
         }
 
         [TestMethod]
-        [Description("[mock] mocking CreateObject")]
-        [Timeout(Timeouts.FiveSecond)]
+        [TestCategory(TC.Mock), TestCategory(GetcuReoneTC.Unit)]
+        [Description("Mocking CreateObject.")]
+        [Timeout(Timeouts.Second.Five)]
         public void CreateObjectMockedTestCase()
         {
             var testObj = new TestObj();
@@ -37,13 +40,14 @@ namespace MvvmFrame.Wpf.TestAdapter.Tests.MockedViewModel
                     TestHelper.AssertCallCouter(1, _createObjectCallCount, "CreateObject");
                     Assert.AreEqual(testObj, result, "return different object");
                 })
-                .RunTestWindow(Timeouts.FiveSecond);
+                .RunTestWindow(Timeouts.Second.Five);
 
         }
 
         [TestMethod]
-        [Description("[mock] mocking ViewModel")]
-        [Timeout(Timeouts.FiveSecond)]
+        [TestCategory(TC.Mock), TestCategory(GetcuReoneTC.Unit)]
+        [Description("Mocking ViewModel.")]
+        [Timeout(Timeouts.Second.Five)]
         public void CreateViewModelMockedTestCase()
         {
             bool isCallSetupMock = false;
@@ -59,7 +63,7 @@ namespace MvvmFrame.Wpf.TestAdapter.Tests.MockedViewModel
                     Assert.IsNotNull(viewModel.NavigationManager, "NavigationManager cannot be null");
                     Assert.IsNotNull(viewModel.UiServices, "UiServices cannot be null");
                 })
-                .RunTestWindow(Timeouts.FiveSecond);
+                .RunTestWindow(Timeouts.Second.Five);
 
         }
     }

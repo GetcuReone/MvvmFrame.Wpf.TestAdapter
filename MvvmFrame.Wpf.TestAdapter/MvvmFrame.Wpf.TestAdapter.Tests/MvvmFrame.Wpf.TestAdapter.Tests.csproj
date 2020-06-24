@@ -5,6 +5,14 @@
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>$(snkFilePath)</AssemblyOriginatorKeyFile>
+    <DelaySign>false</DelaySign>
+    <AssemblyVersion>$(majorVersion).0.0.0</AssemblyVersion>
+    <FileVersion>$(majorVersion).0.0.0</FileVersion>
+  </PropertyGroup>
+
   <ItemGroup>
     <None Remove="Helper\Env\PageTest.xaml" />
     <None Remove="Run\Env\PageTest.xaml" />
@@ -12,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="GetcuReone.GetcuTestAdapter" Version="[1.1.7,)" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
     <PackageReference Include="MSTest.TestAdapter" Version="2.1.0" />
     <PackageReference Include="MSTest.TestFramework" Version="2.1.0" />
@@ -30,6 +39,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Infrastructure\TestCommon\TestCommon.csproj" />
     <ProjectReference Include="..\MvvmFrame.Wpf.TestAdapter\MvvmFrame.Wpf.TestAdapter.csproj" />
   </ItemGroup>
 

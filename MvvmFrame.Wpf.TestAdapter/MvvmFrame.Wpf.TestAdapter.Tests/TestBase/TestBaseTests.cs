@@ -1,14 +1,17 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using System;
+using GetcuReone.GetcuTestAdapter;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TestCommon;
 
 namespace MvvmFrame.Wpf.TestAdapter.Tests.TestBase
 {
     [TestClass]
     public sealed class TestBaseTests : GetcuReone.MvvmFrame.Wpf.TestAdapter.TestBase
     {
-        [Timeout(Timeouts.HundredMillisecodnds)]
         [TestMethod]
-        [Description("[test_base][expected_exception] error return check")]
+        [TestCategory(TC.TestBase), TestCategory(GetcuReoneTC.Negative), TestCategory(GetcuReoneTC.Unit)]
+        [Description("Error return check.")]
+        [Timeout(Timeouts.Millisecond.FiveHundred)]
         public void ErrorReturnCheckTestCase()
         {
             string message = "is error";
@@ -18,9 +21,10 @@ namespace MvvmFrame.Wpf.TestAdapter.Tests.TestBase
             Assert.AreEqual(message, error.Message, "Message text does not match");
         }
 
-        [Timeout(Timeouts.HundredMillisecodnds)]
         [TestMethod]
-        [Description("[test_base][expected_exception] return another error")]
+        [TestCategory(TC.TestBase), TestCategory(GetcuReoneTC.Negative), TestCategory(GetcuReoneTC.Unit)]
+        [Description("Return another error.")]
+        [Timeout(Timeouts.Millisecond.FiveHundred)]
         public void ReturnAnotherErrorTestCase()
         {
             try
@@ -36,9 +40,10 @@ namespace MvvmFrame.Wpf.TestAdapter.Tests.TestBase
             Assert.Fail("The method worked without errors");
         }
 
-        [Timeout(Timeouts.HundredMillisecodnds)]
         [TestMethod]
-        [Description("[test_base][expected_exception][negative] method worked without errors")]
+        [TestCategory(TC.TestBase), TestCategory(GetcuReoneTC.Negative), TestCategory(GetcuReoneTC.Unit)]
+        [Description("Method worked without errors.")]
+        [Timeout(Timeouts.Millisecond.FiveHundred)]
         public void MethodWorkedWithoutErrorsTestCase()
         {
             string message = "Assert.Fail failed. The method worked without errors";

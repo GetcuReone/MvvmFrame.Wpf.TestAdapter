@@ -1,12 +1,11 @@
-﻿using GetcuReone.MvvmFrame.Wpf.TestAdapter;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using MvvmFrame.Wpf.TestAdapter.Tests.GivenWhenThenQueue.Env;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using GetcuReone.GetcuTestAdapter;
+using GetcuReone.MvvmFrame.Wpf.TestAdapter;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using MvvmFrame.Wpf.TestAdapter.Tests.GivenWhenThenQueue.Env;
 
 namespace MvvmFrame.Wpf.TestAdapter.Tests.GivenWhenThenQueue
 {
@@ -22,7 +21,7 @@ namespace MvvmFrame.Wpf.TestAdapter.Tests.GivenWhenThenQueue
         public GivenWhenThenTestBase WriteCodeAndTime(string code)
         {
             // Activity simulation
-            Thread.Sleep(Timeouts.HundredMillisecodnds);
+            Thread.Sleep(Timeouts.Millisecond.Hundred);
             _resultBlockCodes.Add(new ResultBlockCode { Code = code, Time = DateTime.Now });
             return this;
         }
