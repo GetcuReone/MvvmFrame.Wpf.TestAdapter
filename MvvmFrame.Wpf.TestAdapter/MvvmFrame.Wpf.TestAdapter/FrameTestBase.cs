@@ -1,4 +1,5 @@
-﻿using GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities;
+﻿using GetcuReone.MvvmFrame.Interfaces;
+using GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Threading.Tasks;
@@ -32,6 +33,56 @@ namespace GetcuReone.MvvmFrame.Wpf.TestAdapter
             Assert.Fail($"_frame.NavigationService.Content contain not expected content. Expected <{typeof(TPage).Name}> Actual <{_frame.NavigationService.Content.GetType().Name}>.");
             return null;
 
+        }
+
+        /// <summary>
+        /// Asynchronously waiting for a page to load.
+        /// </summary>
+        /// <typeparam name="TPage"></typeparam>
+        /// <param name="step">Verification interval.</param>
+        /// <param name="timeout">Maximum waiting time.</param>
+        /// <returns></returns>
+        protected virtual async ValueTask WaitNavigationPageAsync<TPage>(int step = 100, int timeout = 1_000)
+            where TPage : Page, IPage
+        {
+            if (IsPageType<TPage>())
+                return;
+
+            int maxCount = timeout / step;
+
+            for(int i = 0; i < maxCount; i++)
+            {
+                await Task.Delay(step);
+
+                if (IsPageType<TPage>())
+                    return;
+            }
+
+            Assert.Fail($"Did not wait for the page to load. Page: <{typeof(TPage).Name}>, Step: <{step}>, Timeout: <{timeout}>.");
+        }
+
+        /// <summary>
+        /// True - if the main frame contains a page of <typeparamref name="TPage"/> type.
+        /// </summary>
+        /// <typeparam name="TPage"></typeparam>
+        /// <returns></returns>
+        protected virtual bool IsPageType<TPage>()
+            where TPage : Page, IPage
+        {
+            return _frame?.NavigationService != null
+                && _frame.NavigationService.Content is Page page
+                && page is TPage;
+        }
+
+        /// <summary>
+        /// Given block with create view-model.
+        /// </summary>
+        /// <typeparam name="TViewModel"></typeparam>
+        /// <returns></returns>
+        protected virtual GivenBlock<Frame, TViewModel> GivenInitViewModel<TViewModel>()
+            where TViewModel: ViewModelBase, new()
+        {
+            return Given("Init view-model.", frame => ViewModelBase.CreateViewModel<TViewModel>(frame));
         }
 
         /// <summary>
@@ -71,6 +122,11 @@ namespace GetcuReone.MvvmFrame.Wpf.TestAdapter
                     return null;
                 },
             };
+        }
+
+        protected virtual GivenBlock<Frame, Frame> GivenEmpty()
+        {
+            return Given("Empty given block.", frame => frame);
         }
 
         /// <summary>

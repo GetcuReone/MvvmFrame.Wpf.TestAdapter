@@ -25,8 +25,8 @@ namespace MvvmFrame.Wpf.TestAdapter.Tests.Run
                 Assert.IsNotNull(frame);
                 Assert.AreEqual(frame1, frame, "Frames must match");
             })
-                .When("Empty block", () => { })
-                .Then("Empty block", () => { })
+                .WhenEmpty()
+                .ThenEmpty()
                 .Run<TestWindow>(window =>
                 {
                     frame1 = window.mainFrame;
