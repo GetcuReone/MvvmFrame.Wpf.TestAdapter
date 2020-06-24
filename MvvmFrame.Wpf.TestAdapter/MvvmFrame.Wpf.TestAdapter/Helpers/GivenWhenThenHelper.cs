@@ -120,6 +120,54 @@ namespace GetcuReone.MvvmFrame.Wpf.TestAdapter.Helpers
             });
         }
 
+        /// <summary>
+        /// Empty when block.
+        /// </summary>
+        /// <typeparam name="TIn"></typeparam>
+        /// <typeparam name="TOut"></typeparam>
+        /// <param name="givenBlock"></param>
+        /// <returns></returns>
+        public static WhenBlock<TOut, TOut> WhenEmpty<TIn, TOut>(this GivenBlock<TIn, TOut> givenBlock)
+        {
+            return givenBlock.When("Empty when block.", input => input);
+        }
+
+        /// <summary>
+        /// Empty when block.
+        /// </summary>
+        /// <typeparam name="TIn"></typeparam>
+        /// <typeparam name="TOut"></typeparam>
+        /// <param name="givenBlock"></param>
+        /// <returns></returns>
+        public static WhenBlock<TOut, TOut> WhenEmpty<TIn, TOut>(this GivenAsyncBlock<TIn, TOut> givenBlock)
+        {
+            return givenBlock.When("Empty when block.", input => input);
+        }
+
+        /// <summary>
+        /// Empty when block.
+        /// </summary>
+        /// <typeparam name="TIn"></typeparam>
+        /// <typeparam name="TOut"></typeparam>
+        /// <param name="whenBlock"></param>
+        /// <returns></returns>
+        public static ThenBlock<TOut, TOut> ThenEmpty<TIn, TOut>(this WhenBlock<TIn, TOut> whenBlock)
+        {
+            return whenBlock.Then("Empty then block.", input => input);
+        }
+
+        /// <summary>
+        /// Empty when block.
+        /// </summary>
+        /// <typeparam name="TIn"></typeparam>
+        /// <typeparam name="TOut"></typeparam>
+        /// <param name="whenBlock"></param>
+        /// <returns></returns>
+        public static ThenBlock<TOut, TOut> ThenEmpty<TIn, TOut>(this WhenAsyncBlock<TIn, TOut> whenBlock)
+        {
+            return whenBlock.Then("Empty then block.", input => input);
+        }
+
         internal static async ValueTask RunCodeBlockAndCloseWindow<TWindow>(Stack<BlockBase> blocksStack, TWindow window, Func<TWindow, Frame> getFrame)
             where TWindow : Window, new()
         {
