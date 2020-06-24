@@ -73,6 +73,11 @@ namespace GetcuReone.MvvmFrame.Wpf.TestAdapter
             };
         }
 
+        protected virtual GivenBlock<Frame, Frame> GivenEmpty()
+        {
+            return Given("Empty given block.", frame => frame);
+        }
+
         /// <summary>
         /// Block given
         /// </summary>
