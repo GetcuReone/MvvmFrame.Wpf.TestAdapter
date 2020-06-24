@@ -1,4 +1,5 @@
-﻿using GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities;
+﻿using GetcuReone.MvvmFrame.Interfaces;
+using GetcuReone.MvvmFrame.Wpf.TestAdapter.Entities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Threading.Tasks;
@@ -32,6 +33,19 @@ namespace GetcuReone.MvvmFrame.Wpf.TestAdapter
             Assert.Fail($"_frame.NavigationService.Content contain not expected content. Expected <{typeof(TPage).Name}> Actual <{_frame.NavigationService.Content.GetType().Name}>.");
             return null;
 
+        }
+
+        /// <summary>
+        /// True - if the main frame contains a page of <typeparamref name="TPage"/> type.
+        /// </summary>
+        /// <typeparam name="TPage"></typeparam>
+        /// <returns></returns>
+        protected virtual bool IsPageType<TPage>()
+            where TPage : IPage
+        {
+            return _frame?.NavigationService != null
+                && _frame.NavigationService.Content is Page page
+                && page is TPage;
         }
 
         /// <summary>
