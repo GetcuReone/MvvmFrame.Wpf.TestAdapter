@@ -23,7 +23,7 @@ variables:
 - name: 'buildConfiguration'
   value: 'debug'
 - name: 'majorVersion'
-  value: $[variables['Dev_Major']]
+  value: ${{ variables['Dev_Major'] }}
 - name: 'minorVersion'
   value: $[variables['Dev_Minor']]
 - name: 'patchVersion'
