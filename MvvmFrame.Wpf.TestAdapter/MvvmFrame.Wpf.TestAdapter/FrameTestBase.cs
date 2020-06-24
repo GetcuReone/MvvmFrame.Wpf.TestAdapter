@@ -49,6 +49,17 @@ namespace GetcuReone.MvvmFrame.Wpf.TestAdapter
         }
 
         /// <summary>
+        /// Given block with create view-model.
+        /// </summary>
+        /// <typeparam name="TViewModel"></typeparam>
+        /// <returns></returns>
+        protected virtual GivenBlock<Frame, TViewModel> GivenInitViewModel<TViewModel>()
+            where TViewModel: ViewModelBase, new()
+        {
+            return Given("Init view-model.", frame => ViewModelBase.CreateViewModel<TViewModel>(frame));
+        }
+
+        /// <summary>
         /// Block given
         /// </summary>
         /// <param name="discription"></param>
