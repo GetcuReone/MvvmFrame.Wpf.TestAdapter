@@ -1,59 +1,53 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net472</TargetFramework>
-    <IsPackable>false</IsPackable>
-  </PropertyGroup>
+    <Import Project="..\..\.buildTools\GetcuReone.Common.props" />
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>$(snkFilePath)</AssemblyOriginatorKeyFile>
-    <DelaySign>false</DelaySign>
-    <AssemblyVersion>$(majorVersion).0.0.0</AssemblyVersion>
-    <FileVersion>$(majorVersion).0.0.0</FileVersion>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>net472</TargetFramework>
+        <IsPackable>false</IsPackable>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="FrameTest\Env\AnotherTest.xaml" />
-    <None Remove="FrameTest\Env\PageTest.xaml" />
-    <None Remove="Helper\Env\PageTest.xaml" />
-    <None Remove="Run\Env\PageTest.xaml" />
-    <None Remove="TestWindow.xaml" />
-  </ItemGroup>
+    <ItemGroup>
+        <None Remove="FrameTest\Env\AnotherTest.xaml" />
+        <None Remove="FrameTest\Env\PageTest.xaml" />
+        <None Remove="Helper\Env\PageTest.xaml" />
+        <None Remove="Run\Env\PageTest.xaml" />
+        <None Remove="TestWindow.xaml" />
+    </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="GetcuReone.GetcuTestAdapter" Version="[1.1.7,)" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
-    <PackageReference Include="MSTest.TestAdapter" Version="2.1.0" />
-    <PackageReference Include="MSTest.TestFramework" Version="2.1.0" />
-  </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="GetcuReone.GetcuTestAdapter" Version="[1.1.7,)" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+        <PackageReference Include="MSTest.TestAdapter" Version="2.1.0" />
+        <PackageReference Include="MSTest.TestFramework" Version="2.1.0" />
+    </ItemGroup>
 
-  <ItemGroup>
-    <Page Include="FrameTest\Env\AnotherTest.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="FrameTest\Env\PageTest.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Helper\Env\PageTest.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Run\Env\PageTest.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="TestWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
+    <ItemGroup>
+        <Page Include="FrameTest\Env\AnotherTest.xaml">
+            <SubType>Designer</SubType>
+            <Generator>MSBuild:Compile</Generator>
+        </Page>
+        <Page Include="FrameTest\Env\PageTest.xaml">
+            <Generator>MSBuild:Compile</Generator>
+        </Page>
+        <Page Include="Helper\Env\PageTest.xaml">
+            <Generator>MSBuild:Compile</Generator>
+        </Page>
+        <Page Include="Run\Env\PageTest.xaml">
+            <Generator>MSBuild:Compile</Generator>
+        </Page>
+        <Page Include="TestWindow.xaml">
+            <Generator>MSBuild:Compile</Generator>
+        </Page>
+    </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Infrastructure\TestCommon\TestCommon.csproj" />
-    <ProjectReference Include="..\MvvmFrame.Wpf.TestAdapter\MvvmFrame.Wpf.TestAdapter.csproj" />
-  </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\Infrastructure\TestCommon\TestCommon.csproj" />
+        <ProjectReference Include="..\MvvmFrame.Wpf.TestAdapter\MvvmFrame.Wpf.TestAdapter.csproj" />
+    </ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="System.Windows.Forms" />
-  </ItemGroup>
+    <ItemGroup>
+        <Reference Include="System.Windows.Forms" />
+    </ItemGroup>
 
 </Project>
