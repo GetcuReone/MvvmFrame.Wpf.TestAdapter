@@ -31,7 +31,7 @@ namespace InfrastructureTests
         public void NugetHaveNeedFilesTestCase()
         {
             string nugetId = "MvvmFrameWpf";
-            string libPattern = $"lib/{TargetFramework}/" + "{0}";
+            string libPattern = $"lib/{TargetFramework}/GetcuReone." + "{0}";
             var files = new string[]
             {
                 string.Format(libPattern, $"{_projectName}.dll"),
@@ -81,7 +81,7 @@ namespace InfrastructureTests
             string majorVersion = Environment.GetEnvironmentVariable("majorVersion");
             string excpectedAssemblyVersion = majorVersion != null
                 ? $"{majorVersion}.0.0.0"
-                : "1.0.0.0";
+                : "3.0.0.0";
 
             CheckAssembliesVersion(_solutionFolder, _projectName, excpectedAssemblyVersion, includeAssemblies);
         }
