@@ -1,59 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>net472</TargetFramework>
-    <DocumentationFile>MvvmFrame.Wpf.TestAdapter.xml</DocumentationFile>
-    <RootNamespace>GetcuReone.MvvmFrame.Wpf.TestAdapter</RootNamespace>
 
-    <GitIssuesUrl>https://github.com/GetcuReone/MvvmFrame.Wpf.TestAdapter/issues</GitIssuesUrl>
-    
-    <Authors>Itua Juel-Gaben</Authors>
-    <PackageId>MvvmFrameWpf.TestAdapter</PackageId>
-    <Product>MvvmFrameWpf.TestAdapter</Product>
-    <Description>This library is designed to simplify testing applications created using the library MvvmFrame.Wpf</Description>
-    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-    <RepositoryUrl>https://github.com/GetcuReone/MvvmFrame.Wpf.git</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <PackageProjectUrl>https://github.com/GetcuReone/MvvmFrame.Wpf.TestAdapter/wiki</PackageProjectUrl>
-    <PackageTags>wpf frame mvvm mvvmframe testadapter getcureone combopatterns tests test</PackageTags>
-    <PackageReleaseNotes>
-      Changes:
-      - Added readme $(gitIssuesUrl)/4;
-      - Added empty blocks $(gitIssuesUrl)/9;
-      - Added method IsPageType $(gitIssuesUrl)/11;
-      - Added given with init view-model $(gitIssuesUrl)/19.
-    </PackageReleaseNotes>
-    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <Copyright>Copyright © 2019 $(Authors)</Copyright>
-    <NeutralLanguage>en-US</NeutralLanguage>
+    <Import Project="..\..\.buildTools\GetcuReone.Lib.props" />
 
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>net472</TargetFramework>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>$(snkFilePath)</AssemblyOriginatorKeyFile>
-    <DelaySign>false</DelaySign>
-    <AssemblyVersion>$(majorVersion).0.0.0</AssemblyVersion>
-    <FileVersion>$(majorVersion).0.0.0</FileVersion>
-  </PropertyGroup>
+        <PackageId>MvvmFrameWpf.TestAdapter</PackageId>
+        <Product>MvvmFrameWpf.TestAdapter</Product>
+        <Description>This library is designed to simplify testing applications created using the library MvvmFrame.Wpf</Description>
+        <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+        <RepositoryUrl>https://github.com/GetcuReone/MvvmFrame.Wpf.git</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageProjectUrl>https://github.com/GetcuReone/MvvmFrame.Wpf.TestAdapter/wiki</PackageProjectUrl>
+        <PackageTags>wpf frame mvvm mvvmframe testadapter getcureone combopatterns tests test</PackageTags>
+        <PackageReleaseNotes>
+            Changes:
+            - changed assembly name.
+        </PackageReleaseNotes>
+        <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+        <Copyright>Copyright © 2019 $(Authors)</Copyright>
+        <NeutralLanguage>en-US</NeutralLanguage>
 
-  <ItemGroup>
-    <None Include="..\..\LICENSE-2.0.txt">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-    <None Include="..\..\README.md">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="MSTest.TestFramework" Version="[2.1.0,)" />
-    <PackageReference Include="PresentationFramework" Version="[4.6.0,)" />
-    <PackageReference Include="System.Threading.Tasks.Extensions" Version="[4.5.3,)" />
-    <PackageReference Include="Moq" Version="[4.5.0,)" />
-    <PackageReference Include="MvvmFrameWpf" Version="[6.1.3,)" />
-  </ItemGroup>
+    <ItemGroup>
+        <None Include="..\..\LICENSE-2.0.txt">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
+        <None Include="..\..\README.md">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="MSTest.TestFramework" Version="[2.1.0,)" />
+        <PackageReference Include="PresentationFramework" Version="[4.6.0,)" />
+        <PackageReference Include="System.Threading.Tasks.Extensions" Version="[4.5.3,)" />
+        <PackageReference Include="Moq" Version="[4.5.0,)" />
+        <PackageReference Include="MvvmFrameWpf" Version="[7.0.0,)" />
+    </ItemGroup>
 </Project>
